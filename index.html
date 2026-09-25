@@ -181,6 +181,15 @@ section{padding-block:clamp(36px,5.5vw,64px)}
 .punch{font-family:"Archivo",Arial,sans-serif;font-weight:800;font-size:1.35rem;line-height:1.25;letter-spacing:-.01em;color:var(--ink);border-left:4px solid var(--red);padding-left:14px}
 .days-line{display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line);padding-top:16px;font-size:1.08rem}
 .days-line b{font-family:"Archivo",Arial,sans-serif;color:var(--blue)}
+/* depoimentos a passar na horizontal */
+.marquee{width:100%;min-width:0;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;cursor:grab;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.marquee::-webkit-scrollbar{display:none}
+.marquee.dragging{cursor:grabbing}
+.marquee:focus-visible{outline:3px solid var(--blue);outline-offset:4px;border-radius:8px}
+.marquee-track{display:flex;width:max-content;padding:6px 0 12px}
+.depo{margin:0 14px 0 0;flex:none;height:clamp(215px,56vw,290px)}
+.depo img{height:100%;width:auto;display:block;user-select:none;-webkit-user-drag:none;pointer-events:none}
 .ph{border:2px dashed var(--ph-line);background:var(--ph-bg);color:var(--ph-text);border-radius:8px;padding:16px;font-size:.9rem}
 .ph .tag{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
 
@@ -331,19 +340,13 @@ footer a{color:#fff}
       </span>
     </div>
     <h3>Gente como você, a tocar ao fim de três semanas</h3>
-    <div class="grid g4" style="width:100%">
-      <div class="shot square"><span class="tag">Prova 13</span><p>Print real</p></div>
-      <div class="shot square"><span class="tag">Prova 14</span><p>Print real</p></div>
-      <div class="shot square"><span class="tag">Prova 15</span><p>Print real</p></div>
-      <div class="shot square"><span class="tag">Prova 16</span><p>Print real</p></div>
-      <div class="shot square"><span class="tag">Prova 17</span><p>Print real</p></div>
-      <div class="shot square"><span class="tag">Prova 18</span><p>Print real</p></div>
-      <div class="shot square"><span class="tag">Prova 19</span><p>Print real</p></div>
-      <div class="shot square"><span class="tag">Prova 20</span><p>Print real</p></div>
-      <div class="shot square"><span class="tag">Prova 21</span><p>Print real</p></div>
-      <div class="shot square"><span class="tag">Prova 22</span><p>Print real</p></div>
-      <div class="shot square"><span class="tag">Prova 23</span><p>Print real</p></div>
-      <div class="shot square"><span class="tag">Prova 24</span><p>Print real</p></div>
+    <div class="marquee" id="marquee-depo" tabindex="0" aria-label="Depoimentos de alunos. Passam sozinhos; pode arrastar para o lado.">
+      <div class="marquee-track">
+        <figure class="depo"><img src="imagens/depoimento-01.webp" width="1083" height="586" alt="Depoimento de um aluno do Método Punhado de Teclas" loading="lazy" decoding="async"></figure>
+        <figure class="depo"><img src="imagens/depoimento-02.webp" width="1085" height="600" alt="Depoimento de um aluno do Método Punhado de Teclas" loading="lazy" decoding="async"></figure>
+        <figure class="depo"><img src="imagens/depoimento-03.webp" width="1178" height="600" alt="Depoimento de um aluno do Método Punhado de Teclas" loading="lazy" decoding="async"></figure>
+        <figure class="depo"><img src="imagens/depoimento-04.webp" width="524" height="600" alt="Depoimento de um aluno do Método Punhado de Teclas" loading="lazy" decoding="async"></figure>
+      </div>
     </div>
   </div>
 </section>
@@ -588,5 +591,66 @@ var FIM_DA_OFERTA = new Date(2026, 11, 31, 23, 59, 0);
 })();
 </script>
 
+<script>
+// Depoimentos: passam sozinhos da direita para a esquerda, em loop.
+// Param quando a pessoa passa o rato por cima, toca ou arrasta; recomeçam logo a seguir.
+(function(){
+  var m = document.getElementById('marquee-depo');
+  if (!m) return;
+  var track = m.querySelector('.marquee-track');
+  Array.prototype.slice.call(track.children).forEach(function(c){
+    var k = c.cloneNode(true);
+    k.setAttribute('aria-hidden', 'true');
+    k.querySelector('img').alt = '';
+    track.appendChild(k);
+  });
+  var VELOCIDADE = 35; // píxeis por segundo
+  var parado = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hover = false, toque = false, visivel = true, pos = 0, ultimo = null, retoma = null;
+  function metade(){ return track.scrollWidth / 2; }
+  function ajusta(){
+    var h = metade();
+    if (m.scrollLeft >= h) m.scrollLeft -= h;
+    else if (m.scrollLeft <= 0 && (hover || toque)) m.scrollLeft += h;
+    pos = m.scrollLeft;
+  }
+  function frame(t){
+    if (ultimo === null) ultimo = t;
+    var dt = Math.min((t - ultimo) / 1000, 0.1);
+    ultimo = t;
+    if (!parado && !hover && !toque && visivel){
+      pos += VELOCIDADE * dt;
+      var h = metade();
+      if (h > 0 && pos >= h) pos -= h;
+      m.scrollLeft = pos;
+    }
+    requestAnimationFrame(frame);
+  }
+  m.addEventListener('scroll', function(){ if (hover || toque) ajusta(); }, {passive:true});
+  m.addEventListener('pointerenter', function(e){ if (e.pointerType === 'mouse') hover = true; });
+  m.addEventListener('pointerleave', function(e){ if (e.pointerType === 'mouse') hover = false; pos = m.scrollLeft; });
+  function inicioToque(){ toque = true; clearTimeout(retoma); }
+  function fimToque(){ clearTimeout(retoma); retoma = setTimeout(function(){ toque = false; pos = m.scrollLeft; }, 1500); }
+  m.addEventListener('touchstart', inicioToque, {passive:true});
+  m.addEventListener('touchend', fimToque);
+  m.addEventListener('focusin', inicioToque);
+  m.addEventListener('focusout', fimToque);
+  // arrastar com o rato no computador
+  var down = false, startX = 0, startLeft = 0;
+  m.addEventListener('pointerdown', function(e){
+    if (e.pointerType !== 'mouse') return;
+    down = true; startX = e.clientX; startLeft = m.scrollLeft;
+    m.classList.add('dragging'); m.setPointerCapture(e.pointerId);
+  });
+  m.addEventListener('pointermove', function(e){ if (down) m.scrollLeft = startLeft - (e.clientX - startX); });
+  function solta(){ if (!down) return; down = false; m.classList.remove('dragging'); pos = m.scrollLeft; }
+  m.addEventListener('pointerup', solta);
+  m.addEventListener('pointercancel', solta);
+  if ('IntersectionObserver' in window){
+    new IntersectionObserver(function(en){ visivel = en[0].isIntersecting; ultimo = null; }).observe(m);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
 </body>
 </html>
