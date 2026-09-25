@@ -604,8 +604,8 @@ var FIM_DA_OFERTA = new Date(2026, 11, 31, 23, 59, 0);
     k.querySelector('img').alt = '';
     track.appendChild(k);
   });
-  var VELOCIDADE = 35; // píxeis por segundo
-  var parado = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var VELOCIDADE = 28; // píxeis por segundo (mais alto = mais rápido)
+  var parado = false;
   var hover = false, toque = false, visivel = true, pos = 0, ultimo = null, retoma = null;
   function metade(){ return track.scrollWidth / 2; }
   function ajusta(){
