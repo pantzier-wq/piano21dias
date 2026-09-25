@@ -122,6 +122,10 @@ section{padding-block:clamp(36px,5.5vw,64px)}
 /* bónus */
 .bonus{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:11px}
 .bonus .free{align-self:flex-start;background:var(--green);color:#fff;font-weight:800;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:5px 11px;border-radius:5px}
+.bonus .pain{font-weight:600;font-size:1.02rem;line-height:1.4}
+.bonus .pain strong{font-weight:800;color:var(--green)}
+.bonus-row{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+.bonus-row .bonus{flex:1 1 250px;max-width:340px}
 .bonus .val{font-size:.95rem;font-weight:700}
 
 /* tabela dos packs */
@@ -370,26 +374,29 @@ footer a{color:#fff}
       <p class="eyebrow">Ao comprar hoje</p>
       <h2>Recebe três bónus sem pagar mais por isso</h2>
     </div>
-    <div class="grid g3">
+    <div class="bonus-row">
       <div class="bonus">
         <div class="shot wide"><span class="tag">Mockup bónus 1</span><p>Caderno de Acordes</p></div>
         <span class="free">Grátis</span>
         <h3>Bónus 1 · Caderno de Acordes</h3>
-        <p class="lead" style="font-size:.97rem">Todos os acordes que vai usar, um por página, com o desenho do teclado. Para ter ao lado enquanto toca.</p>
+        <p class="pain">Esquece-se dos acordes a meio da música? <strong>Resolvido!</strong></p>
+        <p class="lead" style="font-size:.97rem">Com este caderno tem todos os acordes do livro, um por página, com o desenho do teclado e os dedos marcados. Deixa-o aberto ao lado e toca sem ter de decorar nada.</p>
         <p class="val"><span class="strike">29€</span> hoje 0€</p>
       </div>
       <div class="bonus">
         <div class="shot wide"><span class="tag">Mockup bónus 2</span><p>Cartões para o Teclado</p></div>
         <span class="free">Grátis</span>
         <h3>Bónus 2 · Cartões para o Teclado</h3>
-        <p class="lead" style="font-size:.97rem">Imprime, corta e põe em cima das teclas. Nos primeiros dias, é o que evita andar a contar teclas.</p>
+        <p class="pain">Perde-se no teclado e anda sempre a contar teclas? <strong>Resolvido!</strong></p>
+        <p class="lead" style="font-size:.97rem">Imprime os cartões, corta e pousa-os em cima das teclas. Nos primeiros dias a mão vai direta ao sítio certo, e depressa deixa de precisar deles.</p>
         <p class="val"><span class="strike">19€</span> hoje 0€</p>
       </div>
       <div class="bonus">
         <div class="shot wide"><span class="tag">Mockup bónus 3</span><p>Uma Música por Dia</p></div>
         <span class="free">Grátis</span>
         <h3>Bónus 3 · Como Aprender Uma Música por Dia</h3>
-        <p class="lead" style="font-size:.97rem">O passo a passo para pegar numa música nova e tocá-la do princípio ao fim no mesmo dia: descobrir os acordes, acertar o ritmo e juntar as mãos.</p>
+        <p class="pain">Demora semanas a tirar cada música nova? <strong>Resolvido!</strong></p>
+        <p class="lead" style="font-size:.97rem">Em 3 passos, este guia mostra como pegar numa música que nunca tocou e tocá-la do princípio ao fim no mesmo dia: descobrir os acordes, acertar o ritmo e juntar as duas mãos.</p>
         <p class="val"><span class="strike">29€</span> hoje 0€</p>
       </div>
     </div>
