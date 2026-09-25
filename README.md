@@ -14,7 +14,7 @@ As imagens estão em ficheiros separados para carregarem mais depressa e ficarem
 | O quê | Onde, no `index.html` |
 |---|---|
 | Vídeo de vendas (VSL) | procure `Cole aqui o código de incorporação da VSL` |
-| Links do checkout | os botões com `data-checkout="basico"`, `"completo"` e `"premium"` estão com `href="#"` |
+| Links do checkout | o botão com `data-checkout="completo"` (pack único de 14,90€) está com `href="#"` |
 | Data do fim da oferta | `var FIM_DA_OFERTA` no fim do ficheiro |
 | Rodapé legal | nome ou empresa, NIF, email, Política de Privacidade e Termos |
 | Espaços amarelos | cada um diz o que lá vai: mockups, bónus, especialista, segunda prova social |
