@@ -183,7 +183,8 @@ section{padding-block:clamp(36px,5.5vw,64px)}
 .faq-item summary:focus-visible{outline:3px solid var(--blue);outline-offset:-3px}
 .faq-item p{padding:0 18px 18px;color:var(--ink-soft)}
 /* garantia */
-.guarantee{display:flex;gap:22px;align-items:flex-start;flex-wrap:wrap;background:#fff;border:2px solid var(--line);border-radius:12px;padding:26px}
+.guarantee{display:flex;flex-direction:column;gap:18px;align-items:center;text-align:center;background:#fff;border:2px solid var(--line);border-radius:12px;padding:26px}
+.seal-img{display:block;width:clamp(150px,42vw,200px);height:auto}
 .seal{width:110px;height:110px;flex:none;border-radius:50%;border:3px solid var(--green);color:var(--green);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-family:"Archivo",Arial,sans-serif;font-weight:800;line-height:1.05}
 .seal b{font-size:2.1rem;display:block}
 .seal span{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase}
@@ -490,7 +491,7 @@ footer a{color:#fff}
 <section>
   <div class="wrap narrow">
     <div class="guarantee">
-      <div class="seal"><b>15</b><span>dias</span></div>
+      <img class="seal-img" src="imagens/selo-garantia.webp" width="440" height="440" alt="Selo de garantia de 15 dias" loading="lazy" decoding="async">
       <div class="stack">
         <h3>Garantia de 15 dias, a contar de hoje</h3>
         <p>Compre, receba tudo no email e veja o material por dentro com calma. Faça os primeiros dias. Experimente no seu teclado.</p>
