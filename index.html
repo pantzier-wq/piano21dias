@@ -452,20 +452,7 @@ footer a{color:#fff}
 <section>
   <div class="wrap narrow center stack">
     <a class="cta" href="#packs">COMEÇAR POR 14,90€</a>
-    <p class="smallprint">Tudo digital. Assim que o pagamento é confirmado, recebe os PDF no email — no telemóvel, no computador ou para imprimir. Não há nada à espera nos correios.</p>
-  </div>
-</section>
-
-<!-- 16 · CONTADOR FINAL -->
-<section class="alt">
-  <div class="wrap narrow center stack">
-    <div class="timer" id="timer-fim">
-      <span class="box" style="background:#101820;color:#fff"><span class="num" data-d>00</span><span class="cap">dias</span></span>
-      <span class="box" style="background:#101820;color:#fff"><span class="num" data-h>00</span><span class="cap">horas</span></span>
-      <span class="box" style="background:#101820;color:#fff"><span class="num" data-m>00</span><span class="cap">min</span></span>
-      <span class="box" style="background:#101820;color:#fff"><span class="num" data-s>00</span><span class="cap">seg</span></span>
-    </div>
-    <p class="lead">Quando este tempo acabar, o desconto sai do ar e o livro volta ao preço normal.</p>
+    <p class="smallprint">Assim que o pagamento for finalizado, você recebe todos os materiais de imediato, sem ficar à espera.</p>
   </div>
 </section>
 
@@ -500,34 +487,6 @@ footer a{color:#fff}
 </footer>
 
 <script>
-// Contador: conta até uma data real. Troque a linha abaixo pela data em que a oferta acaba mesmo.
-// Formato: ano, mês-1, dia, hora, minuto. Exemplo: 31 de dezembro de 2026 às 23:59.
-var FIM_DA_OFERTA = new Date(2026, 11, 31, 23, 59, 0);
-
-(function(){
-  var alvos = [document.getElementById('timer-topo'), document.getElementById('timer-fim')].filter(Boolean);
-  function pad(n){ return (n < 10 ? '0' : '') + n; }
-  function tick(){
-    var resta = FIM_DA_OFERTA - new Date();
-    if (resta <= 0){
-      alvos.forEach(function(t){ t.hidden = true; });
-      return;
-    }
-    var d = Math.floor(resta / 86400000);
-    var h = Math.floor(resta % 86400000 / 3600000);
-    var m = Math.floor(resta % 3600000 / 60000);
-    var s = Math.floor(resta % 60000 / 1000);
-    alvos.forEach(function(t){
-      t.querySelector('[data-d]').textContent = pad(d);
-      t.querySelector('[data-h]').textContent = pad(h);
-      t.querySelector('[data-m]').textContent = pad(m);
-      t.querySelector('[data-s]').textContent = pad(s);
-    });
-  }
-  tick();
-  setInterval(tick, 1000);
-})();
-
 // Carrossel de provas: arrastar com o rato no computador; no telemóvel o dedo já arrasta sozinho.
 (function(){
   var car = document.getElementById('car-provas');
