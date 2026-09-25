@@ -159,6 +159,15 @@ section{padding-block:clamp(36px,5.5vw,64px)}
 .vs-today{padding:22px 20px 26px;text-align:center;background:#ecfdf3}
 .vs-today .vs-label{color:var(--green)}
 .vs-now{font-family:"Archivo",Arial,sans-serif;font-weight:800;font-size:clamp(2.8rem,11vw,3.6rem);line-height:1;color:var(--green);margin-top:6px}
+/* perguntas frequentes */
+.faq{display:flex;flex-direction:column;gap:10px}
+.faq-item{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.faq-item summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px;padding:17px 18px;font-family:"Archivo",Arial,sans-serif;font-weight:700;font-size:1.04rem;line-height:1.35}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";flex:none;width:28px;height:28px;border-radius:50%;background:var(--blue-soft);color:var(--blue-dark);display:flex;align-items:center;justify-content:center;font-size:1.25rem;font-weight:700;line-height:1}
+.faq-item[open] summary::after{content:"−"}
+.faq-item summary:focus-visible{outline:3px solid var(--blue);outline-offset:-3px}
+.faq-item p{padding:0 18px 18px;color:var(--ink-soft)}
 /* garantia */
 .guarantee{display:flex;gap:22px;align-items:flex-start;flex-wrap:wrap;background:#fff;border:2px solid var(--line);border-radius:12px;padding:26px}
 .seal{width:110px;height:110px;flex:none;border-radius:50%;border:3px solid var(--green);color:var(--green);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-family:"Archivo",Arial,sans-serif;font-weight:800;line-height:1.05}
@@ -443,7 +452,7 @@ footer a{color:#fff}
   <div class="wrap stack-lg">
     <div class="stack narrow center">
       <h2>Comece hoje por 14,90€</h2>
-      <p class="lead">Aula particular de piano em Portugal começa nos 23€ à hora. Uma escola de música anda nos 87,80€ por mês. Isto paga-se uma vez.</p>
+      <p class="lead" style="font-weight:700"><span style="color:var(--red)">Aula particular de piano em Portugal começa nos 23€ à hora. Uma escola de música anda nos 87,80€ por mês.</span> <span style="color:var(--ink)">Isto paga-se uma vez.</span></p>
     </div>
 
     <div class="pack best" style="width:100%;max-width:460px;margin-inline:auto">
@@ -484,6 +493,43 @@ footer a{color:#fff}
   <div class="wrap narrow center stack">
     <a class="cta" href="#packs">COMEÇAR POR 14,90€</a>
     <p class="smallprint">Assim que o pagamento for finalizado, você recebe todos os materiais de imediato, sem ficar à espera.</p>
+  </div>
+</section>
+
+<!-- 16 · PERGUNTAS FREQUENTES -->
+<section class="alt">
+  <div class="wrap narrow stack-lg">
+    <h2 style="text-align:center">Perguntas frequentes</h2>
+    <div class="faq">
+      <details class="faq-item">
+        <summary>Nunca toquei nada. Isto serve para mim?</summary>
+        <p>Serve. O livro foi feito para quem começa do zero: não precisa de saber ler pauta nem de ter tido aulas. Começa logo pelos acordes, com o desenho do teclado em cada passo.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Preciso de ter piano ou serve um teclado?</summary>
+        <p>Serve qualquer um: um teclado simples, um piano digital ou o piano lá de casa. O que aprende é igual nos três.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Quanto tempo tenho de praticar por dia?</summary>
+        <p>15 minutos. Cada dia do livro diz exatamente o que praticar, por isso não perde tempo a decidir o que fazer.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Tenho mais de 50 anos. Ainda vou a tempo?</summary>
+        <p>Vai. Não há idade para começar. O método foi pensado para adultos que querem tocar sem a pressão das aulas tradicionais, ao seu ritmo.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Como recebo o material?</summary>
+        <p>Assim que o pagamento for finalizado, recebe tudo no seu email: o livro e os três bónus em PDF. Pode abrir no telemóvel, no computador ou imprimir.</p>
+      </details>
+      <details class="faq-item">
+        <summary>É um pagamento único ou uma mensalidade?</summary>
+        <p>É um pagamento único de 14,90€. Não há mensalidades nem cobranças escondidas, e o material fica seu.</p>
+      </details>
+      <details class="faq-item">
+        <summary>E se eu não gostar?</summary>
+        <p>Tem 15 dias de garantia. Se achar que não é para si, escreva para o email de apoio e devolvemos o dinheiro, sem perguntas.</p>
+      </details>
+    </div>
   </div>
 </section>
 
