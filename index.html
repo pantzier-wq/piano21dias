@@ -182,6 +182,11 @@ section{padding-block:clamp(36px,5.5vw,64px)}
 .faq-item[open] summary::after{content:"−"}
 .faq-item summary:focus-visible{outline:3px solid var(--blue);outline-offset:-3px}
 .faq-item p{padding:0 18px 18px;color:var(--ink-soft)}
+/* autor */
+.author-lead{font-size:clamp(1.35rem,4vw,1.6rem);line-height:1.2}
+.author-box{background:var(--blue-soft);border:1px solid #bfe2f6;border-radius:12px;padding:18px 20px}
+.author-sign{font-family:"Archivo",Arial,sans-serif;font-weight:800;font-style:italic;font-size:1.22rem;line-height:1.3;color:var(--ink)}
+.author-sign span{display:block;font-style:normal;font-weight:700;font-size:.95rem;color:var(--blue-dark);margin-top:6px}
 /* garantia */
 .guarantee{display:flex;flex-direction:column;gap:18px;align-items:center;text-align:center;background:#fff;border:2px solid var(--line);border-radius:12px;padding:26px}
 .seal-img{display:block;width:clamp(150px,42vw,200px);height:auto}
@@ -398,10 +403,17 @@ footer a{color:#fff}
   <div class="wrap two-col">
     <div class="shot square" style="max-width:320px;width:100%;justify-self:center"><span class="tag">Foto do Francisco</span><p>Fotografia do autor, de preferência ao teclado.</p></div>
     <div class="stack">
-      <h3>Quem escreveu este livro</h3>
-      <p>Chamo-me Francisco, tenho 54 anos e sempre gostei de ouvir piano. Imaginava como seria tocar as músicas de que gosto, mas, entre o trabalho e as responsabilidades do dia a dia, o tempo parecia nunca chegar. E quando finalmente me sentava ao teclado, surgia a mesma dúvida: por onde começo? Cheguei a pensar que tocar era só para quem nascia com o tal “dom para a música”.</p>
-      <p>Comecei por aprender um acorde de cada vez, praticando durante poucos minutos e juntando as peças aos poucos. Quando consegui tocar as primeiras sequências sem parar, percebi que podia continuar a aprender mesmo com a rotina que tinha.</p>
-      <p>Foi dessa experiência que nasceu o <span class="blue">Método Punhado de Teclas</span>: um percurso visual de 21 dias para quem começa do zero, aprende os primeiros acordes e chega a uma peça simples com as duas mãos, ao seu ritmo. <strong>É o caminho que eu gostaria de ter encontrado quando comecei.</strong></p>
+      <p class="eyebrow">Quem escreveu este livro</p>
+      <h3 class="author-lead">Chamo-me Francisco, tenho 54 anos e sempre gostei de ouvir piano.</h3>
+      <p>Imaginava como seria tocar as músicas de que gosto, mas, entre o trabalho e as responsabilidades do dia a dia, <span class="red">o tempo parecia nunca chegar.</span></p>
+      <p>E quando finalmente me sentava ao teclado, surgia a mesma dúvida: <span class="red">por onde começo?</span></p>
+      <p class="punch">Cheguei a pensar que tocar era só para quem nascia com o tal “dom para a música”.</p>
+      <p>Comecei por aprender <span class="blue">um acorde de cada vez</span>, praticando durante <span class="blue">poucos minutos</span> e juntando as peças aos poucos.</p>
+      <p>Quando consegui tocar as primeiras sequências sem parar, percebi que <strong>podia continuar a aprender mesmo com a rotina que tinha.</strong></p>
+      <div class="author-box">
+        <p>Foi dessa experiência que nasceu o <span class="blue">Método Punhado de Teclas</span>: um percurso visual de <strong>21 dias</strong> para quem começa do zero, aprende os primeiros acordes e chega a uma peça simples com as duas mãos, <strong>ao seu ritmo.</strong></p>
+      </div>
+      <p class="author-sign">“É o caminho que eu gostaria de ter encontrado quando comecei.”<span>— Francisco</span></p>
     </div>
   </div>
 </section>
