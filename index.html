@@ -145,6 +145,20 @@ section{padding-block:clamp(36px,5.5vw,64px)}
 .pack .price .was{font-size:1rem;padding-bottom:6px}
 .packs{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));align-items:start}
 
+/* resumo do que recebe */
+.value-stack{width:100%;max-width:520px;margin-inline:auto;background:#fff;border:2px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 14px 36px rgba(15,23,32,.08)}
+.stack-item{padding:18px 20px;border-bottom:1px solid var(--line);text-align:center}
+.stack-item .si-name{text-wrap:balance;font-family:"Archivo",Arial,sans-serif;font-weight:700;font-size:1.08rem;line-height:1.3;color:var(--ink)}
+.stack-item .si-val{font-family:"Archivo",Arial,sans-serif;font-weight:800;font-size:1.7rem;line-height:1.1;color:var(--blue-dark);margin-top:4px}
+.stack-item.main{background:var(--blue-soft)}
+.stack-item.main .si-name{font-size:1.25rem}
+.stack-item.main .si-val{font-size:2rem}
+.vs-total{padding:20px;text-align:center;background:#fef3f2;border-bottom:1px solid #fbd5d1}
+.vs-label{font-weight:700;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.vs-was{font-family:"Archivo",Arial,sans-serif;font-weight:800;font-size:2.2rem;line-height:1.1;color:var(--red);text-decoration:line-through;text-decoration-thickness:3px;margin-top:4px}
+.vs-today{padding:22px 20px 26px;text-align:center;background:#ecfdf3}
+.vs-today .vs-label{color:var(--green)}
+.vs-now{font-family:"Archivo",Arial,sans-serif;font-weight:800;font-size:clamp(2.8rem,11vw,3.6rem);line-height:1;color:var(--green);margin-top:6px}
 /* garantia */
 .guarantee{display:flex;gap:22px;align-items:flex-start;flex-wrap:wrap;background:#fff;border:2px solid var(--line);border-radius:12px;padding:26px}
 .seal{width:110px;height:110px;flex:none;border-radius:50%;border:3px solid var(--green);color:var(--green);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-family:"Archivo",Arial,sans-serif;font-weight:800;line-height:1.05}
@@ -381,7 +395,7 @@ footer a{color:#fff}
         <h3>Bónus 1 · Caderno de Acordes</h3>
         <p class="pain">Esquece-se dos acordes a meio da música? <strong>Resolvido!</strong></p>
         <p class="lead" style="font-size:.97rem">Com este caderno tem todos os acordes do livro, um por página, com o desenho do teclado e os dedos marcados. Deixa-o aberto ao lado e toca sem ter de decorar nada.</p>
-        <p class="val"><span class="strike">29€</span> hoje 0€</p>
+        <p class="val"><span class="strike">14,90€</span> hoje 0€</p>
       </div>
       <div class="bonus">
         <img class="mockup" src="imagens/bonus-2.webp" width="800" height="800" alt="Cartões para o Teclado, com um telemóvel a mostrar os cartões das notas Dó a Si para recortar" loading="lazy" decoding="async">
@@ -389,7 +403,7 @@ footer a{color:#fff}
         <h3>Bónus 2 · Cartões para o Teclado</h3>
         <p class="pain">Perde-se no teclado e anda sempre a contar teclas? <strong>Resolvido!</strong></p>
         <p class="lead" style="font-size:.97rem">Imprime os cartões, corta e pousa-os em cima das teclas. Nos primeiros dias a mão vai direta ao sítio certo, e depressa deixa de precisar deles.</p>
-        <p class="val"><span class="strike">19€</span> hoje 0€</p>
+        <p class="val"><span class="strike">14,90€</span> hoje 0€</p>
       </div>
       <div class="bonus">
         <img class="mockup" src="imagens/bonus-3.webp" width="800" height="800" alt="Guia Uma Música por Dia, com um telemóvel a mostrar o plano em 3 passos" loading="lazy" decoding="async">
@@ -397,7 +411,7 @@ footer a{color:#fff}
         <h3>Bónus 3 · Como Aprender Uma Música por Dia</h3>
         <p class="pain">Demora semanas a tirar cada música nova? <strong>Resolvido!</strong></p>
         <p class="lead" style="font-size:.97rem">Em 3 passos, este guia mostra como pegar numa música que nunca tocou e tocá-la do princípio ao fim no mesmo dia: descobrir os acordes, acertar o ritmo e juntar as duas mãos.</p>
-        <p class="val"><span class="strike">29€</span> hoje 0€</p>
+        <p class="val"><span class="strike">14,90€</span> hoje 0€</p>
       </div>
     </div>
   </div>
@@ -405,19 +419,21 @@ footer a{color:#fff}
 
 <!-- 13 · RESUMO DO QUE RECEBE -->
 <section>
-  <div class="wrap stack-lg">
-    <div class="stack narrow center"><h2>Tudo o que recebe</h2></div>
-    <div class="shot band"><span class="tag">Mockup do conjunto</span><p>Livro e os três bónus lado a lado, como uma coleção.</p></div>
-    <div class="table-scroll narrow" style="width:100%">
-      <table class="value" style="min-width:0">
-        <tr><th>O que leva</th><th>Valor</th></tr>
-        <tr><td>Livro Teclado em 21 Dias (PDF)</td><td>47€</td></tr>
-        <tr><td>Bónus 1 · Caderno de Acordes</td><td>29€</td></tr>
-        <tr><td>Bónus 2 · Cartões para o Teclado</td><td>19€</td></tr>
-        <tr><td>Bónus 3 · Como Aprender Uma Música por Dia</td><td>29€</td></tr>
-        <tr><td>Valor se comprasse à parte</td><td class="strike">124€</td></tr>
-        <tr><td>Hoje</td><td>14,90€</td></tr>
-      </table>
+  <div class="wrap stack-lg center">
+    <h2>Tudo o que recebe</h2>
+    <div class="value-stack">
+      <div class="stack-item main"><p class="si-name">Livro Piano &amp; Teclado em 21 Dias</p><p class="si-val">19,90€</p></div>
+      <div class="stack-item"><p class="si-name">Bónus 1 · Caderno de Acordes</p><p class="si-val">14,90€</p></div>
+      <div class="stack-item"><p class="si-name">Bónus 2 · Cartões para o Teclado</p><p class="si-val">14,90€</p></div>
+      <div class="stack-item"><p class="si-name">Bónus 3 · Como Aprender Uma Música por Dia</p><p class="si-val">14,90€</p></div>
+      <div class="vs-total">
+        <p class="vs-label">Valor se comprasse à parte</p>
+        <p class="vs-was">64,60€</p>
+      </div>
+      <div class="vs-today">
+        <p class="vs-label">Hoje, leva tudo por</p>
+        <p class="vs-now">14,90€</p>
+      </div>
     </div>
   </div>
 </section>
@@ -439,7 +455,7 @@ footer a{color:#fff}
         <li><svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="#12a150"></circle><path d="M4.3 8.2l2.5 2.5 4.9-5" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Cartões para o teclado</span></li>
         <li><svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="#12a150"></circle><path d="M4.3 8.2l2.5 2.5 4.9-5" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Como aprender uma música por dia</span></li>
       </ul>
-      <div class="price"><span class="was strike">124€</span><span class="now">14,90€</span></div>
+      <div class="price"><span class="was strike">64,60€</span><span class="now">14,90€</span></div>
       <a class="cta" href="#" data-checkout="completo">QUERO O PACK COMPLETO</a>
       <p class="smallprint">Pagamento único · acesso imediato · 7 dias de garantia</p>
     </div>
