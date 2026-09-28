@@ -11,16 +11,12 @@
 <script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
 <link rel="preload" href="https://scripts.converteai.net/b589f2cd-e759-4622-a8c5-10c3d1ba6d68/players/6abad8f296d6ccaa36c1a192/v4/player.js" as="script">
 <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
-<link rel="preload" href="https://cdn.converteai.net/b589f2cd-e759-4622-a8c5-10c3d1ba6d68/6abad8e3cf73de249d3a9340/main.m3u8" as="fetch">
 <link rel="dns-prefetch" href="https://cdn.converteai.net">
 <link rel="dns-prefetch" href="https://scripts.converteai.net">
 <link rel="dns-prefetch" href="https://images.converteai.net">
 <link rel="dns-prefetch" href="https://license.vturb.com">
 <meta name="robots" content="index,follow">
 <style>img{max-width:100%}[hidden]{display:none!important}</style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap">
 <style>
 :root{
   color-scheme:light;
@@ -38,14 +34,15 @@
   --ph-bg:#fff8e6;
   --ph-line:#e0b84a;
   --ph-text:#7a5c14;
+  --display:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
 *{box-sizing:border-box}
 body{
   margin:0;background:var(--bg);color:var(--ink);
-  font-family:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;
 }
-h1,h2,h3{font-family:"Archivo","Helvetica Neue",Arial,sans-serif;margin:0;line-height:1.08;font-weight:800;text-wrap:balance;letter-spacing:-.02em}
+h1,h2,h3{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;margin:0;line-height:1.08;font-weight:800;text-wrap:balance;letter-spacing:-.02em}
 h1{font-size:clamp(2rem,6.4vw,3.2rem)}
 h2{font-size:clamp(1.6rem,4.6vw,2.4rem)}
 h3{font-size:1.18rem;font-weight:700;letter-spacing:-.01em}
@@ -70,14 +67,14 @@ section{padding-block:clamp(36px,5.5vw,64px)}
 .urgency .u1{font-weight:700;font-size:.92rem;letter-spacing:.1em;text-transform:uppercase}
 .timer{display:flex;gap:8px;justify-content:center;align-items:center;margin-top:10px}
 .timer .box{background:rgba(0,0,0,.22);border-radius:7px;padding:7px 10px;min-width:58px}
-.timer .num{font-family:"Archivo",Arial,sans-serif;font-weight:800;font-size:1.5rem;line-height:1;font-variant-numeric:tabular-nums;display:block}
+.timer .num{font-family:var(--display);font-weight:800;font-size:1.5rem;line-height:1;font-variant-numeric:tabular-nums;display:block}
 .timer .cap{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
 .urgency .u2{font-size:.86rem;margin-top:9px;opacity:.92}
 .top-product{background:var(--ink);line-height:0}
 .top-product img{display:block;width:100%;max-width:1200px;height:auto;margin-inline:auto}
 .offer-head{background:var(--ink);color:#fff;text-align:center;padding:26px 20px}
 .offer-head .off{
-  display:inline-block;background:var(--amber);color:#1a1200;font-family:"Archivo",Arial,sans-serif;
+  display:inline-block;background:var(--amber);color:#1a1200;font-family:var(--display);
   font-weight:800;font-size:1.05rem;padding:7px 16px;border-radius:6px;letter-spacing:.02em;
 }
 .offer-head h1{color:#fff}
@@ -88,7 +85,7 @@ section{padding-block:clamp(36px,5.5vw,64px)}
 .cta{
   display:inline-flex;align-items:center;justify-content:center;text-align:center;
   background:var(--green);color:#fff;text-decoration:none;font-weight:800;
-  font-family:"Archivo",Arial,sans-serif;font-size:1.06rem;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:1.06rem;
   padding:19px 30px;border-radius:8px;box-shadow:0 6px 16px rgba(18,161,80,.25);
   width:100%;max-width:460px;
 }
@@ -152,7 +149,7 @@ section{padding-block:clamp(36px,5.5vw,64px)}
 
 /* tabela dos packs */
 .value{width:100%;border-collapse:collapse;font-size:.97rem;min-width:520px;background:#fff}
-.value th{background:var(--ink);color:#fff;font-family:"Archivo",Arial,sans-serif;font-size:.86rem;letter-spacing:.02em;padding:12px 10px;text-align:left}
+.value th{background:var(--ink);color:#fff;font-family:var(--display);font-size:.86rem;letter-spacing:.02em;padding:12px 10px;text-align:left}
 .value td{padding:12px 10px;border-bottom:1px solid var(--line)}
 .value td:not(:first-child){text-align:center}
 .value tr:last-child td{border-bottom:none;font-weight:800}
@@ -163,28 +160,28 @@ section{padding-block:clamp(36px,5.5vw,64px)}
 .pack.best{border:3px solid var(--green);box-shadow:0 14px 40px rgba(15,23,32,.10)}
 .pack .badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);white-space:nowrap;background:var(--green);color:#fff;font-weight:800;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:6px 14px;border-radius:6px}
 .pack .price{display:flex;align-items:flex-end;gap:10px;flex-wrap:wrap}
-.pack .price .now{font-family:"Archivo",Arial,sans-serif;font-size:2.5rem;font-weight:800;line-height:1}
+.pack .price .now{font-family:var(--display);font-size:2.5rem;font-weight:800;line-height:1}
 .pack .price .was{font-size:1rem;padding-bottom:6px}
 .packs{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));align-items:start}
 
 /* resumo do que recebe */
 .value-stack{width:100%;max-width:520px;margin-inline:auto;background:#fff;border:2px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 14px 36px rgba(15,23,32,.08)}
 .stack-item{padding:18px 20px;border-bottom:1px solid var(--line);text-align:center}
-.stack-item .si-name{text-wrap:balance;font-family:"Archivo",Arial,sans-serif;font-weight:700;font-size:1.08rem;line-height:1.3;color:var(--ink)}
-.stack-item .si-val{font-family:"Archivo",Arial,sans-serif;font-weight:800;font-size:1.7rem;line-height:1.1;color:var(--blue-dark);margin-top:4px}
+.stack-item .si-name{text-wrap:balance;font-family:var(--display);font-weight:700;font-size:1.08rem;line-height:1.3;color:var(--ink)}
+.stack-item .si-val{font-family:var(--display);font-weight:800;font-size:1.7rem;line-height:1.1;color:var(--blue-dark);margin-top:4px}
 .stack-item.main{background:var(--blue-soft)}
 .stack-item.main .si-name{font-size:1.25rem}
 .stack-item.main .si-val{font-size:2rem}
 .vs-total{padding:20px;text-align:center;background:#fef3f2;border-bottom:1px solid #fbd5d1}
 .vs-label{font-weight:700;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
-.vs-was{font-family:"Archivo",Arial,sans-serif;font-weight:800;font-size:2.2rem;line-height:1.1;color:var(--red);text-decoration:line-through;text-decoration-thickness:3px;margin-top:4px}
+.vs-was{font-family:var(--display);font-weight:800;font-size:2.2rem;line-height:1.1;color:var(--red);text-decoration:line-through;text-decoration-thickness:3px;margin-top:4px}
 .vs-today{padding:22px 20px 26px;text-align:center;background:#ecfdf3}
 .vs-today .vs-label{color:var(--green)}
-.vs-now{font-family:"Archivo",Arial,sans-serif;font-weight:800;font-size:clamp(2.8rem,11vw,3.6rem);line-height:1;color:var(--green);margin-top:6px}
+.vs-now{font-family:var(--display);font-weight:800;font-size:clamp(2.8rem,11vw,3.6rem);line-height:1;color:var(--green);margin-top:6px}
 /* perguntas frequentes */
 .faq{display:flex;flex-direction:column;gap:10px}
 .faq-item{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
-.faq-item summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px;padding:17px 18px;font-family:"Archivo",Arial,sans-serif;font-weight:700;font-size:1.04rem;line-height:1.35}
+.faq-item summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px;padding:17px 18px;font-family:var(--display);font-weight:700;font-size:1.04rem;line-height:1.35}
 .faq-item summary::-webkit-details-marker{display:none}
 .faq-item summary::after{content:"+";flex:none;width:28px;height:28px;border-radius:50%;background:var(--blue-soft);color:var(--blue-dark);display:flex;align-items:center;justify-content:center;font-size:1.25rem;font-weight:700;line-height:1}
 .faq-item[open] summary::after{content:"−"}
@@ -196,7 +193,7 @@ section{padding-block:clamp(36px,5.5vw,64px)}
 .author-photo figcaption{margin-top:10px;text-align:center;font-weight:700;font-size:.92rem;color:var(--ink-soft)}
 .author-lead{font-size:clamp(1.35rem,4vw,1.6rem);line-height:1.2}
 .author-box{background:var(--blue-soft);border:1px solid #bfe2f6;border-radius:12px;padding:18px 20px}
-.author-sign{font-family:"Archivo",Arial,sans-serif;font-weight:800;font-style:italic;font-size:1.22rem;line-height:1.3;color:var(--ink)}
+.author-sign{font-family:var(--display);font-weight:800;font-style:italic;font-size:1.22rem;line-height:1.3;color:var(--ink)}
 .author-sign span{display:block;font-style:normal;font-weight:700;font-size:.95rem;color:var(--blue-dark);margin-top:6px}
 .contact-box{background:#fff;border:2px solid var(--line);border-radius:14px;padding:26px 20px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
 .contact-box h3{font-size:1.35rem}
@@ -210,7 +207,7 @@ section{padding-block:clamp(36px,5.5vw,64px)}
 /* garantia */
 .guarantee{display:flex;flex-direction:column;gap:18px;align-items:center;text-align:center;background:#fff;border:2px solid var(--line);border-radius:12px;padding:26px}
 .seal-img{display:block;width:clamp(150px,42vw,200px);height:auto}
-.seal{width:110px;height:110px;flex:none;border-radius:50%;border:3px solid var(--green);color:var(--green);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-family:"Archivo",Arial,sans-serif;font-weight:800;line-height:1.05}
+.seal{width:110px;height:110px;flex:none;border-radius:50%;border:3px solid var(--green);color:var(--green);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-family:var(--display);font-weight:800;line-height:1.05}
 .seal b{font-size:2.1rem;display:block}
 .seal span{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase}
 
@@ -245,9 +242,9 @@ section{padding-block:clamp(36px,5.5vw,64px)}
 .vsl{position:relative;aspect-ratio:16/9;max-width:100%;background:#0b1320;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#fff;box-shadow:0 14px 36px rgba(15,23,32,.18);overflow:hidden}
 .vsl .play{width:78px;height:78px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;padding-left:4px;box-shadow:0 0 0 10px rgba(217,45,32,.18)}
 .vsl .vsl-tag{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;opacity:.7}
-.punch{font-family:"Archivo",Arial,sans-serif;font-weight:800;font-size:1.35rem;line-height:1.25;letter-spacing:-.01em;color:var(--ink);border-left:4px solid var(--red);padding-left:14px}
+.punch{font-family:var(--display);font-weight:800;font-size:1.35rem;line-height:1.25;letter-spacing:-.01em;color:var(--ink);border-left:4px solid var(--red);padding-left:14px}
 .days-line{display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line);padding-top:16px;font-size:1.08rem}
-.days-line b{font-family:"Archivo",Arial,sans-serif;color:var(--blue)}
+.days-line b{font-family:var(--display);color:var(--blue)}
 /* depoimentos a passar na horizontal */
 .marquee{width:100%;min-width:0;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;cursor:grab;
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
@@ -519,7 +516,7 @@ footer a{color:#fff}
         <li><svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="#12a150"></circle><path d="M4.3 8.2l2.5 2.5 4.9-5" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Como aprender uma música por dia</span></li>
       </ul>
       <div class="price"><span class="was strike">64,60 €</span><span class="now">14,90 €</span></div>
-      <a class="cta" href="https://pay.hotmart.com/J107806231G" data-checkout="completo">QUERO O PACK COMPLETO</a>
+      <a class="cta" href="https://pay.hotmart.com/J107806231G?bid=1790638033836" data-checkout="completo">QUERO O PACK COMPLETO</a>
       <p class="smallprint">Pagamento único · acesso imediato · 15 dias de garantia</p>
     </div>
 
@@ -699,14 +696,6 @@ footer a{color:#fff}
   }
   requestAnimationFrame(frame);
 })();
-</script>
-<script>
-// Depois de a página abrir, descarrega as imagens de baixo em segundo plano,
-// para já estarem prontas quando a pessoa chegar a elas.
-window.addEventListener('load', function(){
-  var go = function(){ document.querySelectorAll('img[loading="lazy"]').forEach(function(img){ img.loading = 'eager'; }); };
-  if ('requestIdleCallback' in window) requestIdleCallback(go, {timeout: 1500}); else setTimeout(go, 600);
-});
 </script>
 <script>
 // Botões que levam à oferta: a página desliza devagar até ao cartão do pack,
