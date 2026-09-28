@@ -183,6 +183,9 @@ section{padding-block:clamp(36px,5.5vw,64px)}
 .faq-item summary:focus-visible{outline:3px solid var(--blue);outline-offset:-3px}
 .faq-item p{padding:0 18px 18px;color:var(--ink-soft)}
 /* autor */
+.author-photo{margin:0;width:100%;max-width:320px;justify-self:center}
+.author-photo img{display:block;width:100%;height:auto;border-radius:16px;box-shadow:0 14px 36px rgba(15,23,32,.16)}
+.author-photo figcaption{margin-top:10px;text-align:center;font-weight:700;font-size:.92rem;color:var(--ink-soft)}
 .author-lead{font-size:clamp(1.35rem,4vw,1.6rem);line-height:1.2}
 .author-box{background:var(--blue-soft);border:1px solid #bfe2f6;border-radius:12px;padding:18px 20px}
 .author-sign{font-family:"Archivo",Arial,sans-serif;font-weight:800;font-style:italic;font-size:1.22rem;line-height:1.3;color:var(--ink)}
@@ -401,7 +404,7 @@ footer a{color:#fff}
 <!-- 11 · O AUTOR -->
 <section>
   <div class="wrap two-col">
-    <div class="shot square" style="max-width:320px;width:100%;justify-self:center"><span class="tag">Foto do Francisco</span><p>Fotografia do autor, de preferência ao teclado.</p></div>
+    <figure class="author-photo"><img src="imagens/francisco.webp" width="640" height="800" alt="Francisco, autor do Método Punhado de Teclas" loading="lazy" decoding="async"><figcaption>Francisco, 54 anos · autor do método</figcaption></figure>
     <div class="stack">
       <p class="eyebrow">Quem escreveu este livro</p>
       <h3 class="author-lead">Chamo-me Francisco, tenho 54 anos e sempre gostei de ouvir piano.</h3>
