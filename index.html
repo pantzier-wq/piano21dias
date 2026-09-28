@@ -198,6 +198,9 @@ section{padding-block:clamp(36px,5.5vw,64px)}
 .cta.wa{gap:10px;white-space:nowrap;margin-top:6px;background:#1faa59}
 .cta.wa:hover{background:#178a48}
 .cta.wa svg{flex:none;width:24px;height:24px}
+/* chegada ao botão do checkout */
+@keyframes chegou{0%{transform:scale(1);box-shadow:0 6px 16px rgba(18,161,80,.25)}40%{transform:scale(1.04);box-shadow:0 0 0 10px rgba(18,161,80,.18)}100%{transform:scale(1);box-shadow:0 6px 16px rgba(18,161,80,.25)}}
+.cta.chegou{animation:chegou 1s ease-in-out 2 !important}
 /* garantia */
 .guarantee{display:flex;flex-direction:column;gap:18px;align-items:center;text-align:center;background:#fff;border:2px solid var(--line);border-radius:12px;padding:26px}
 .seal-img{display:block;width:clamp(150px,42vw,200px);height:auto}
@@ -692,6 +695,49 @@ window.addEventListener('load', function(){
   var go = function(){ document.querySelectorAll('img[loading="lazy"]').forEach(function(img){ img.loading = 'eager'; }); };
   if ('requestIdleCallback' in window) requestIdleCallback(go, {timeout: 1500}); else setTimeout(go, 600);
 });
+</script>
+<script>
+// Botões que levam à oferta: a página desliza devagar até ao cartão do pack,
+// para com o preço e o botão do checkout à vista, e o botão pulsa duas vezes.
+(function(){
+  var card = document.querySelector('#packs .pack');
+  if (!card) return;
+  var botao = card.querySelector('a.cta');
+  function suave(t){ return t < .5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2; }
+  function destino(){
+    var vh = window.innerHeight;
+    var topo = card.getBoundingClientRect().top + window.scrollY;
+    var alto = card.offsetHeight;
+    if (alto <= vh - 32) return topo - (vh - alto) / 2;            // cabe: fica ao centro
+    var fimBotao = botao.getBoundingClientRect().bottom + window.scrollY;
+    return fimBotao - vh + 28;                                        // não cabe: preço e botão à vista
+  }
+  var a_correr = null;
+  function desliza(){
+    if (a_correr) cancelAnimationFrame(a_correr);
+    var inicio = window.scrollY;
+    var fim = Math.max(0, Math.min(destino(), document.documentElement.scrollHeight - window.innerHeight));
+    var dist = fim - inicio;
+    var dur = Math.min(1600, Math.max(700, Math.abs(dist) * 0.35));
+    var t0 = null;
+    function passo(agora){
+      if (t0 === null) t0 = agora;
+      var t = Math.min((agora - t0) / dur, 1);
+      window.scrollTo(0, inicio + dist * suave(t));
+      if (t < 1) { a_correr = requestAnimationFrame(passo); }
+      else { a_correr = null; botao.classList.remove('chegou'); void botao.offsetWidth; botao.classList.add('chegou'); }
+    }
+    a_correr = requestAnimationFrame(passo);
+  }
+  // se a pessoa mexer na página a meio, pára de deslizar
+  ['wheel','touchstart','keydown'].forEach(function(ev){
+    window.addEventListener(ev, function(){ if (a_correr) { cancelAnimationFrame(a_correr); a_correr = null; } }, {passive:true});
+  });
+  document.querySelectorAll('a[href="#packs"]').forEach(function(link){
+    link.addEventListener('click', function(e){ e.preventDefault(); desliza(); });
+  });
+  botao.addEventListener('animationend', function(){ botao.classList.remove('chegou'); });
+})();
 </script>
 </body>
 </html>
