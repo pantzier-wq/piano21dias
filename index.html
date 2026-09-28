@@ -507,7 +507,7 @@ footer a{color:#fff}
         <li><svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="#12a150"></circle><path d="M4.3 8.2l2.5 2.5 4.9-5" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Como aprender uma música por dia</span></li>
       </ul>
       <div class="price"><span class="was strike">64,60€</span><span class="now">14,90€</span></div>
-      <a class="cta" href="#" data-checkout="completo">QUERO O PACK COMPLETO</a>
+      <a class="cta" href="https://pay.hotmart.com/J107806231G" data-checkout="completo">QUERO O PACK COMPLETO</a>
       <p class="smallprint">Pagamento único · acesso imediato · 15 dias de garantia</p>
     </div>
 
@@ -737,6 +737,19 @@ window.addEventListener('load', function(){
     link.addEventListener('click', function(e){ e.preventDefault(); desliza(); });
   });
   botao.addEventListener('animationend', function(){ botao.classList.remove('chegou'); });
+})();
+</script>
+<script>
+// Passa os parâmetros do anúncio (utm_*, src, sck, fbclid...) para o link do checkout,
+// para a Hotmart saber de que campanha veio cada venda.
+(function(){
+  var q = window.location.search.slice(1);
+  if (!q) return;
+  document.querySelectorAll('a[data-checkout]').forEach(function(a){
+    var h = a.getAttribute('href');
+    if (!h || h.charAt(0) === '#') return;
+    a.setAttribute('href', h + (h.indexOf('?') < 0 ? '?' : '&') + q);
+  });
 })();
 </script>
 </body>
