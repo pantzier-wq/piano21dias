@@ -24,9 +24,7 @@
           <div class="prices"><span class="old">97 €</span><span class="now">27,90 €</span></div>
           <p class="note">Piano Sem Bloqueios é material digital, num pagamento único.</p>
           <p class="deadline">Este valor especial fica disponível hoje, <span id="lisbon-day">na data de hoje</span>, até às 23h59 (hora de Portugal).</p>
-          <button class="cta" type="button" disabled aria-describedby="checkout-pendente">QUERO JUNTAR A BIBLIOTECA POR 27,90 €</button>
-          <a class="decline" href="../downsell/">Por agora, fico só com o método</a>
-          <p class="setup-note" id="checkout-pendente">O checkout desta oferta está a ser configurado.</p>
+          <div id="hotmart-sales-funnel"></div>
         </div>
       </div>
       <div class="hero-art" aria-label="Biblioteca Piano Sem Bloqueios, com sete percursos e áudios de treino"><img class="hero-product" src="../imagens/biblioteca-visual.webp" width="1254" height="1254" alt="Apresentação visual da biblioteca digital Piano Sem Bloqueios, com material de estudo e treino do ouvido" fetchpriority="high"><span class="float top-right lesson" aria-hidden="true">✦ 7 percursos</span><span class="float bottom-left audio" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2 7v4m3-7v10m3-12v14m3-11v8m3-9v10m3-7v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>24 áudios</span></div>
@@ -48,5 +46,7 @@
   <div class="after"><div class="wrap"><h2>Um apoio para voltar ao teclado com vontade.</h2><p>Escolha uma rotina, trabalhe uma dificuldade de cada vez e termine a sessão a tocar uma peça.</p></div></div>
   <footer><div class="wrap">Piano Sem Bloqueios · Método Punhado de Teclas · Oferta digital</div></footer>
   <script>function atualizarDia(){document.getElementById('lisbon-day').textContent=new Intl.DateTimeFormat('pt-PT',{timeZone:'Europe/Lisbon',day:'numeric',month:'long'}).format(new Date())}atualizarDia();document.addEventListener('visibilitychange',function(){if(!document.hidden)atualizarDia()});</script>
+  <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
+  <script>checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')</script>
 </body>
 </html>
