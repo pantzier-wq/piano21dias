@@ -19,6 +19,8 @@ O livro fornecido tem 70 páginas, sete percursos e 24 áudios MP3. O primeiro p
 
 O botão de compra de cada página secundária está desativado até que o produto e as duas ofertas sejam criados na Hotmart. Para ativar a compra pós-pagamento com o Funil de Vendas da Hotmart:
 
+A página de upsell mostra a data do dia em `Europe/Lisbon` e anuncia a condição de 27,90 € até às 23h59 desse dia. Como a condição se renova diariamente, mantenha a oferta de 27,90 € disponível na Hotmart em todos os dias anunciados; a indicação da página não altera automaticamente o preço ou a validade dentro da Hotmart.
+
 1. Cadastre e libere para venda o produto **Piano Sem Bloqueios — Biblioteca Prática Completa**, com o PDF e os 24 MP3, e crie as ofertas de 27,90 € e 19 €.
 2. Crie um Funil de Vendas para a oferta principal do Piano & Teclado em 21 Dias. Configure o upsell com `https://piano21dias.vercel.app/upsell/`, a recusa com `https://piano21dias.vercel.app/downsell/` e a recusa final com `https://piano21dias.vercel.app/obrigado/`. Direcione os caminhos de aceite para a página de obrigado adequada.
 3. Copie o **Código do Widget do Funil de Vendas** gerado pela Hotmart e instale-o nas duas páginas externas. Substitua os botões desativados e os links manuais de recusa pelos controles oficiais do widget. O widget é indispensável para o aceite/recusa e para a compra com um clique.
