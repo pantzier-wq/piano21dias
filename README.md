@@ -15,7 +15,7 @@ As imagens estão em ficheiros separados para carregarem mais depressa e ficarem
 - `/downsell/` apresenta o mesmo material por **19 €** após a recusa.
 - `/obrigado/` encerra o percurso de recusa; não confirma o estado da transação.
 
-O livro fornecido tem 70 páginas, sete percursos e 24 áudios MP3. O primeiro percurso contém 18 exercícios, não 30. A capa em `imagens/biblioteca-capa.webp` foi extraída do PDF fornecido; o conteúdo pago não está publicado neste repositório.
+O material fornecido tem 70 páginas, sete percursos e 24 áudios MP3. O primeiro percurso contém 18 exercícios, não 30. A imagem promocional em `imagens/biblioteca-visual.webp` foi fornecida pelo produtor e usada nas duas páginas; o conteúdo pago não está publicado neste repositório.
 
 O botão de compra de cada página secundária está desativado até que o produto e as duas ofertas sejam criados na Hotmart. Para ativar a compra pós-pagamento com o Funil de Vendas da Hotmart:
 
