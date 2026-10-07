@@ -45,6 +45,20 @@ h3{font-size:1.04rem;letter-spacing:0}
 .card .num{display:inline-block;color:#075e34;background:#ffffffad;border:1px solid #9fe7bb;border-radius:999px;padding:5px 10px;font-size:.69rem;letter-spacing:.11em;font-weight:850;margin-bottom:10px}
 .card h3{margin-bottom:6px;color:#07552f;font-weight:800}
 .card p{font-size:.91rem;color:#265941;margin-bottom:0}
+.upsell-gold .hero{display:flex;flex-direction:column;gap:24px;align-items:stretch;max-width:700px;margin-inline:auto}
+.upsell-gold .hero-copy{order:0}
+.upsell-gold .hero-art{order:1;width:min(100%,390px)}
+.upsell-gold .hero-purchase{order:2}
+.upsell-gold .proof-line{justify-content:center;margin:0 0 20px}
+.upsell-gold .lead{max-width:none}
+.upsell-gold .card{border-color:#e3bb57;background:linear-gradient(135deg,#fff9df 0%,#ffe7a3 55%,#f4cd70 100%);box-shadow:inset 0 1px 0 #fffdf3,0 8px 24px #c9922526}
+.upsell-gold .card .num{color:#705017;background:#fffaf0cc;border-color:#e5c779}
+.upsell-gold .card h3{color:#4d3510}
+.upsell-gold .card p{color:#66502a}
+.upsell-gold .hero-art:before,.downsell-gold-art .hero-art:before{background-image:url('imagens/biblioteca-dourada.jpg')}
+.upsell-gold .hero-art:after{background:linear-gradient(145deg,#f7d16b66,#fff6d27a);border-color:#efd59b}
+.upsell-gold .hero-product{box-shadow:0 18px 36px #9f731c45}
+.upsell-gold .float.audio{background:#705017;color:#fff8e6}
 .after{background:#f2f7fa;border-top:1px solid var(--line);padding:34px 0;text-align:center}
 .after p{margin-bottom:0;color:#415361}
 .last{background:#fff8e9;border:1px solid #efd69d;border-radius:11px;padding:15px 17px;color:#594521;margin:20px 0}
