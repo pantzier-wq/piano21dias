@@ -1,5 +1,6 @@
 :root{color-scheme:light;--ink:#102231;--muted:#536575;--blue:#117dad;--pale:#eaf6fb;--line:#dce8ee;--green:#119b56;--gold:#f4bd41}
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html{scroll-behavior:smooth}
 body{margin:0;background:#fff;color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
 img{max-width:100%;height:auto}
@@ -47,6 +48,8 @@ h3{font-size:1.04rem;letter-spacing:0}
 .card p{font-size:.91rem;color:#265941;margin-bottom:0}
 .upsell-gold .hero{display:flex;flex-direction:column;gap:24px;align-items:stretch;max-width:700px;margin-inline:auto}
 .upsell-gold .hero-copy{order:0}
+.upsell-gold .hero-copy{text-align:center}
+.upsell-gold .hero-copy h2{font-size:clamp(1.7rem,4.8vw,2.6rem)}
 .upsell-gold .hero-art{order:1;width:min(100%,390px)}
 .upsell-gold .hero-purchase{order:2}
 .upsell-gold .proof-line{justify-content:center;margin:0 0 20px}
@@ -59,8 +62,29 @@ h3{font-size:1.04rem;letter-spacing:0}
 .upsell-gold .hero-art:after{background:linear-gradient(145deg,#f7d16b66,#fff6d27a);border-color:#efd59b}
 .upsell-gold .hero-product{box-shadow:0 18px 36px #9f731c45}
 .upsell-gold .float.audio{background:#705017;color:#fff8e6}
+.vsl-intro{max-width:700px;margin:0 auto 44px;text-align:center}
+.vsl-eyebrow{display:inline-block;margin:0 0 13px;padding:7px 14px;border:1px solid #dfbf77;border-radius:999px;background:#fff8e6;color:#79571c;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;font-weight:800}
+.vsl-intro h1{font-size:clamp(1.75rem,5vw,2.55rem);margin:0 0 12px;line-height:1.16}
+.vsl-lead{max-width:560px;margin:0 auto 22px;color:#536575;font-size:1.04rem}
+.vsl-player{position:relative;width:min(100%,340px);aspect-ratio:9/16;margin-inline:auto;overflow:hidden;border-radius:18px;background:#091a2b;border:1px solid #b89548;box-shadow:0 16px 40px #10223124}
+.vsl-player vturb-smartplayer{display:block;width:100%}
+.vsl-reassurance{max-width:510px;margin:17px auto 0;color:#536575;font-size:.82rem;line-height:1.5}
+.upsell-gold .offer{border-color:#bc9647;background:linear-gradient(135deg,#102739,#091a2b);color:#fffaf0;box-shadow:0 14px 36px #1022311c}
+.upsell-gold .offer .label{color:#efce84}
+.upsell-gold .offer .old{color:#c2cbd0}
+.upsell-gold .offer .now{color:#f2cc77}
+.upsell-gold .offer .note{color:#dbe4e9;margin-bottom:10px}
+.offer-saving{margin:12px 0 7px;font-size:.97rem;font-weight:700;color:#fff1cc}
+.offer-context{font-size:.82rem;line-height:1.5;color:#c3d0d8;margin-bottom:8px}
+.funnel-local-preview .setup-note{font-size:.74rem}
+.funnel-local-preview .decline:disabled{cursor:default}
+.upsell-gold .funnel-local-preview .cta:disabled{background:linear-gradient(135deg,#f6d78f,#dfb45c);color:#142535;box-shadow:0 6px 17px #0002;opacity:1;cursor:default}
+.upsell-gold .funnel-local-preview .decline:disabled{background:transparent;color:#d6e1e8;border-color:#587080}
+.upsell-gold .funnel-local-preview .setup-note{color:#adbdc8}
+html[data-local-preview] #hotmart-sales-funnel{display:none}
 .after{background:#f2f7fa;border-top:1px solid var(--line);padding:34px 0;text-align:center}
 .after p{margin-bottom:0;color:#415361}
 .last{background:#fff8e9;border:1px solid #efd69d;border-radius:11px;padding:15px 17px;color:#594521;margin:20px 0}
 footer{border-top:1px solid var(--line);padding:20px 0 30px;color:#687781;font-size:.79rem;text-align:center}
 @media(max-width:700px){main{padding-top:20px}.hero{grid-template-columns:1fr;gap:22px}.hero-copy{order:1}.hero-art{order:0;width:min(100%,340px);padding:18px}.hero-art:before,.hero-art:after{inset:8px}.float.top-right{top:24px;right:-5px}.float.bottom-left{bottom:25px;left:-5px}.proof-line{margin-bottom:20px}.grid{grid-template-columns:1fr}.offer{padding:19px}.details{padding-top:38px}}
+@media(max-width:700px){.vsl-player{width:min(100%,320px)}.vsl-intro{margin-bottom:34px}.vsl-lead{font-size:.97rem}.vsl-reassurance{font-size:.78rem}.upsell-gold .hero-copy .lead{font-size:1rem}.upsell-gold .hero-art{width:min(100%,340px)}}
