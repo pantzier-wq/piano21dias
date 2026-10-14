@@ -81,12 +81,13 @@ section{padding-block:clamp(36px,5.5vw,64px)}
 .offer-head .h-blue{color:#5cc8ff}
 .sales-hero{padding:0;background:#031224;color:#fff}
 .sales-hero .offer-head{background:#031224;padding:clamp(28px,4vw,48px) 20px 24px}
-.hero-subheadline{max-width:700px;color:#fff;font-size:clamp(1rem,2.3vw,1.15rem);line-height:1.6}
+.hero-subheadline{max-width:700px;color:#fff;font-size:clamp(1rem,2.3vw,1.15rem);line-height:1.6;font-weight:600}
 .hero-action{padding-block:24px 36px}
 .hero-meta{font-size:.9rem;color:#fff}
 .method-video{margin-top:0;margin-bottom:20px}
 .method-copy{margin-top:36px}
-.dark .checks{color:#fff}
+.dark .checks{color:#fff;font-weight:600}
+.method-copy > p:not(.punch),.method-copy .days-line p{font-weight:600}
 .dark .cta{color:#fff}
 .carousel.materials-carousel{grid-template-rows:1fr;grid-auto-columns:clamp(265px,76vw,340px);gap:18px;padding:6px 4px 20px;mask-image:none;-webkit-mask-image:none;align-items:stretch}
 .material-card{margin:0;min-width:0;scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 8px 24px rgba(15,23,32,.07);text-align:left}
@@ -166,12 +167,16 @@ section{padding-block:clamp(36px,5.5vw,64px)}
 .bonus .free{align-self:flex-start;background:var(--green);color:#fff;font-weight:800;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:5px 11px;border-radius:5px}
 .bonus .pain{font-weight:600;font-size:1.02rem;line-height:1.4}
 .bonus .pain strong{font-weight:800;color:var(--green)}
-.carousel.bonus-carousel{grid-template-rows:1fr;grid-auto-columns:clamp(280px,82vw,340px);gap:18px;padding:6px 4px 20px;mask-image:none;-webkit-mask-image:none;align-items:stretch}
+.carousel.bonus-carousel{grid-template-rows:1fr;grid-auto-columns:clamp(280px,82vw,340px);gap:18px;padding:6px 4px 20px;mask-image:none;-webkit-mask-image:none;align-items:stretch;scroll-snap-type:none}
 .bonus-carousel > .bonus{min-width:0;scroll-snap-align:start}
 .bonus-carousel > .bonus > img{width:100%;height:280px;object-fit:contain;user-select:none;-webkit-user-drag:none;pointer-events:none}
-.bonus-carousel .bonus-example{color:var(--ink);border:0;justify-content:center}
-.bonus-carousel .bonus-example .material-image{height:255px;padding:0}
-.bonus-carousel .bonus-example figcaption{padding:20px 0 0}
+.bonus-carousel .bonus-example{color:var(--ink);border:0;justify-content:flex-start}
+.bonus-carousel > .bonus-example > img{height:190px;object-fit:cover;border-radius:5px}
+.bonus-example .free{background:var(--blue-dark)}
+.bonus-example .example-detail{font-size:.94rem;line-height:1.5;color:var(--ink-soft)}
+.bonus-example .example-included{font-weight:700;font-size:.92rem;color:var(--blue-dark);margin-top:auto}
+.bonus-carousel .val{margin-top:auto}
+.bonus-swipe-hint{text-align:center;justify-content:center;max-width:100%;text-wrap:balance}
 .bonus .val{font-size:.95rem;font-weight:700}
 
 /* tabela dos packs */
@@ -356,7 +361,7 @@ footer a{color:#fff}
       <p class="eyebrow">Ao comprar hoje</p>
       <h2>Recebe três bónus sem pagar mais por isso</h2>
     </div>
-    <p class="swipe-hint" style="align-self:center">Deslize para ver os três bónus e o livro por dentro →</p>
+    <p class="swipe-hint bonus-swipe-hint" style="align-self:center">Explore os materiais para o lado →</p>
     <div class="carousel-wrap materials-wrap">
       <button class="car-btn prev" type="button" aria-label="Ver bónus anteriores" aria-controls="car-bonus">‹</button>
       <div class="carousel bonus-carousel" id="car-bonus" tabindex="0" role="region" aria-roledescription="carrossel" aria-label="Três bónus e exemplos do livro. Use as setas ou deslize para explorar.">
@@ -384,10 +389,15 @@ footer a{color:#fff}
         <p class="lead" style="font-size:.97rem">Em 3 passos, este guia mostra como pegar numa música que nunca tocou e tocá-la do princípio ao fim no mesmo dia: descobrir os acordes, acertar o ritmo e juntar as duas mãos.</p>
         <p class="val"><span class="strike">14,90 €</span> hoje 0 €</p>
       </div>
-      <figure class="bonus material-card bonus-example">
-        <div class="material-image"><img src="imagens/livro-aberto.webp" width="1400" height="788" alt="Livro aberto com diagramas do teclado e exercícios para praticar, passo a passo" loading="lazy" decoding="async"></div>
-        <figcaption><span class="material-label">Por dentro do material</span><h3>Exemplos para praticar</h3><p>Diagramas do teclado e exercícios, passo a passo.</p></figcaption>
-      </figure>
+      <div class="bonus bonus-example">
+        <img class="mockup" src="imagens/livro-aberto.webp" width="1400" height="788" alt="Livro aberto com diagramas do teclado e exercícios para praticar, passo a passo" loading="lazy" decoding="async">
+        <span class="free">Livro principal</span>
+        <h3>Abra o livro e saiba o que praticar</h3>
+        <p class="pain">Não sabe por onde começar? <strong>Veja cada passo no teclado.</strong></p>
+        <p class="example-detail">Diagramas mostram as teclas a usar e a posição dos dedos. Os exercícios estão organizados por etapas, para experimentar logo no seu instrumento.</p>
+        <p class="example-detail">Um plano de 21 dias, com sessões de 15 minutos, ajuda-o a chegar ao teclado com uma tarefa definida — sem saltar de vídeo em vídeo à procura da próxima explicação.</p>
+        <p class="example-included">Incluído no pack · PDF para consultar ou imprimir</p>
+      </div>
       </div>
       <button class="car-btn next" type="button" aria-label="Ver mais bónus e exemplos" aria-controls="car-bonus">›</button>
     </div>
@@ -647,6 +657,63 @@ document.querySelectorAll('.carousel').forEach(function(car){
     if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); move(e.key === 'ArrowRight' ? 1 : -1); }
   });
 });
+</script>
+
+<script>
+// Bónus: movimento lento e contínuo para a esquerda, sem impedir a navegação manual.
+(function(){
+  var car = document.getElementById('car-bonus');
+  if (!car) return;
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var originals = Array.prototype.slice.call(car.children);
+  originals.forEach(function(card){
+    var clone = card.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    clone.setAttribute('inert', '');
+    clone.querySelectorAll('img').forEach(function(img){ img.alt = ''; });
+    car.appendChild(clone);
+  });
+  var wrap = car.parentNode;
+  var visible = false, hover = false, touching = false, focused = false;
+  var resumeAt = performance.now() + 1500, last = null, position = car.scrollLeft;
+  var speed = 18; // píxeis por segundo: os cartões saem lentamente pela esquerda.
+  function pause(){ resumeAt = performance.now() + 4500; position = car.scrollLeft; }
+  function cycleWidth(){
+    return car.children[originals.length].getBoundingClientRect().left - car.children[0].getBoundingClientRect().left;
+  }
+  wrap.addEventListener('pointerenter', function(e){ if (e.pointerType === 'mouse') hover = true; });
+  wrap.addEventListener('pointerleave', function(e){ if (e.pointerType === 'mouse') { hover = false; pause(); } });
+  wrap.addEventListener('pointerdown', function(){ touching = true; pause(); });
+  window.addEventListener('pointerup', function(){ if (touching) { touching = false; pause(); } });
+  window.addEventListener('pointercancel', function(){ if (touching) { touching = false; pause(); } });
+  wrap.addEventListener('wheel', pause, {passive:true});
+  wrap.addEventListener('click', pause);
+  wrap.addEventListener('keydown', pause);
+  car.addEventListener('focusin', function(){ focused = true; });
+  car.addEventListener('focusout', function(){ focused = false; pause(); });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function(entries){
+      visible = entries[0].isIntersecting;
+      last = null;
+      if (visible) pause();
+    }).observe(car);
+  } else visible = true;
+  document.addEventListener('visibilitychange', function(){ last = null; pause(); });
+  function frame(now){
+    var dt = last === null ? 0 : Math.min((now - last) / 1000, .1);
+    last = now;
+    if (visible && !document.hidden && !reduced.matches && !hover && !touching && !focused && now >= resumeAt) {
+      // Recolhe a posição final depois de um swipe ou de um botão com scroll suave.
+      if (Math.abs(car.scrollLeft - position) > 2) position = car.scrollLeft;
+      position += speed * dt;
+      var cycle = cycleWidth();
+      if (cycle > 0 && position >= cycle) position %= cycle;
+      car.scrollLeft = position;
+    } else position = car.scrollLeft;
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
 </script>
 
 <script>
