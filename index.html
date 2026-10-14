@@ -66,14 +66,9 @@ section{padding-block:clamp(36px,5.5vw,64px)}
 .strike{text-decoration:line-through;color:var(--ink-soft)}
 .smallprint{font-size:.84rem;color:var(--ink-soft)}
 
-/* 2 · banner de urgência com contador */
+/* Tarja promocional */
 .urgency{background:var(--red);color:#fff;text-align:center;padding:16px 20px}
 .urgency .u1{font-weight:700;font-size:.92rem;letter-spacing:.1em;text-transform:uppercase}
-.timer{display:flex;gap:8px;justify-content:center;align-items:center;margin-top:10px}
-.timer .box{background:rgba(0,0,0,.22);border-radius:7px;padding:7px 10px;min-width:58px}
-.timer .num{font-family:var(--display);font-weight:800;font-size:1.5rem;line-height:1;font-variant-numeric:tabular-nums;display:block}
-.timer .cap{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
-.urgency .u2{font-size:.86rem;margin-top:9px;opacity:.92}
 .top-product{background:#031224;line-height:0}
 .top-product img{display:block;width:100%;max-width:1200px;height:auto;margin-inline:auto}
 .offer-head{background:var(--ink);color:#fff;text-align:center;padding:26px 20px}
@@ -86,12 +81,13 @@ section{padding-block:clamp(36px,5.5vw,64px)}
 .offer-head .h-blue{color:#5cc8ff}
 .sales-hero{padding:0;background:#031224;color:#fff}
 .sales-hero .offer-head{background:#031224;padding:clamp(28px,4vw,48px) 20px 24px}
-.hero-subheadline{max-width:700px;color:#d3e7f7;font-size:clamp(1rem,2.3vw,1.15rem);line-height:1.6}
+.hero-subheadline{max-width:700px;color:#fff;font-size:clamp(1rem,2.3vw,1.15rem);line-height:1.6;font-weight:600}
 .hero-action{padding-block:24px 36px}
-.hero-meta{font-size:.9rem;color:#d3e7f7}
+.hero-meta{font-size:.9rem;color:#fff}
 .method-video{margin-top:0;margin-bottom:20px}
 .method-copy{margin-top:36px}
-.dark .checks{color:#e3edf5}
+.dark .checks{color:#fff;font-weight:600}
+.method-copy > p:not(.punch),.method-copy .days-line p{font-weight:600}
 .dark .cta{color:#fff}
 .carousel.materials-carousel{grid-template-rows:1fr;grid-auto-columns:clamp(265px,76vw,340px);gap:18px;padding:6px 4px 20px;mask-image:none;-webkit-mask-image:none;align-items:stretch}
 .material-card{margin:0;min-width:0;scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 8px 24px rgba(15,23,32,.07);text-align:left}
@@ -159,7 +155,7 @@ section{padding-block:clamp(36px,5.5vw,64px)}
 .dark h2{color:#fff}
 .dark .eyebrow{color:#5cc2f2}
 .dark .bonus{color:var(--ink);border-color:transparent}
-.dark .narrow > p:not(.eyebrow):not(.punch){color:#d3dbe4}
+.dark .narrow > p:not(.eyebrow):not(.punch){color:#fff}
 .dark .red{color:#ff7b6b}
 .dark .blue{color:#5cc8ff}
 .dark .punch{color:#fff;border-left-color:#ff7b6b}
@@ -171,8 +167,17 @@ section{padding-block:clamp(36px,5.5vw,64px)}
 .bonus .free{align-self:flex-start;background:var(--green);color:#fff;font-weight:800;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:5px 11px;border-radius:5px}
 .bonus .pain{font-weight:600;font-size:1.02rem;line-height:1.4}
 .bonus .pain strong{font-weight:800;color:var(--green)}
-.bonus-row{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
-.bonus-row .bonus{flex:1 1 250px;max-width:340px}
+.carousel.bonus-carousel{grid-template-rows:1fr;grid-auto-columns:clamp(280px,82vw,340px);gap:18px;padding:6px 4px 20px;mask-image:none;-webkit-mask-image:none;align-items:stretch;scroll-snap-type:none}
+.bonus-carousel > .bonus{min-width:0;scroll-snap-align:start}
+.bonus-carousel > .bonus > img{width:100%;height:280px;object-fit:contain;user-select:none;-webkit-user-drag:none;pointer-events:none}
+.bonus-carousel .bonus-example{color:var(--ink);border:0;justify-content:flex-start}
+.bonus-carousel > .bonus-example > img{height:190px;object-fit:cover;border-radius:5px}
+.bonus-example .free{background:var(--blue-dark)}
+.bonus-example .example-detail{font-size:.94rem;line-height:1.5;color:var(--ink-soft)}
+.bonus-example .example-included{font-weight:700;font-size:.92rem;color:var(--blue-dark);margin-top:auto}
+.bonus-carousel .val{margin-top:auto}
+.bonus-swipe-hint{text-align:center;justify-content:center;max-width:100%;text-wrap:balance}
+.carousel.bonus-carousel{overflow-anchor:none;scroll-snap-type:x proximity}
 .bonus .val{font-size:.95rem;font-weight:700}
 
 /* tabela dos packs */
@@ -283,7 +288,7 @@ section{padding-block:clamp(36px,5.5vw,64px)}
 .ph{border:2px dashed var(--ph-line);background:var(--ph-bg);color:var(--ph-text);border-radius:8px;padding:16px;font-size:.9rem}
 .ph .tag{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
 
-footer{background:var(--ink);color:#c8d0d8;font-size:.85rem;padding-block:36px}
+footer{background:var(--ink);color:#fff;font-size:.85rem;padding-block:36px}
 footer a{color:#fff}
 .legal{display:flex;flex-wrap:wrap;gap:8px 18px}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
@@ -294,14 +299,6 @@ footer a{color:#fff}
 <!-- 1 · BANNER DE URGÊNCIA -->
 <div class="urgency">
   <p class="u1">Oferta promocional encerra hoje</p>
-  <div class="timer" id="offer-day-timer" role="timer" aria-label="Tempo restante até ao fim do dia em Portugal continental" aria-live="off" hidden>
-    <div class="box"><span class="num" data-hours>00</span><span class="cap">Horas</span></div>
-    <span aria-hidden="true">:</span>
-    <div class="box"><span class="num" data-minutes>00</span><span class="cap">Minutos</span></div>
-    <span aria-hidden="true">:</span>
-    <div class="box"><span class="num" data-seconds>00</span><span class="cap">Segundos</span></div>
-  </div>
-  <p class="u2" id="offer-day-deadline">Até às 23h59 de hoje · hora de Portugal continental</p>
 </div>
 
 <!-- 1 · HERO -->
@@ -358,34 +355,17 @@ footer a{color:#fff}
   </div>
 </section>
 
-<!-- 3 · O QUE RECEBE: CARROSSEL VISUAL -->
-<section class="alt" id="materiais" data-order="3" aria-labelledby="materiais-titulo">
-  <div class="wrap stack-lg center">
-    <div class="stack narrow center"><p class="eyebrow">Veja o material por dentro</p><h2 id="materiais-titulo">O que vai receber</h2></div>
-    <p class="swipe-hint">Deslize para explorar o livro e os três bónus →</p>
-    <div class="carousel-wrap materials-wrap">
-      <button class="car-btn prev" type="button" aria-label="Ver materiais anteriores">‹</button>
-      <div class="carousel materials-carousel" id="car-materiais" tabindex="0" role="region" aria-roledescription="carrossel" aria-label="Livro, exemplos de prática e três bónus. Use as setas ou deslize para explorar.">
-        <figure class="material-card"><div class="material-image"><img src="imagens/livro-mockup.webp" width="1400" height="788" alt="Piano &amp; Teclado em 21 Dias: O percurso visual para orientar os seus primeiros passos." loading="lazy" decoding="async"></div><figcaption><span class="material-label">O método principal</span><h3>Piano &amp; Teclado em 21 Dias</h3><p>O percurso visual para orientar os seus primeiros passos.</p></figcaption></figure>
-        <figure class="material-card"><div class="material-image"><img src="imagens/livro-aberto.webp" width="1400" height="788" alt="Exemplos para praticar: Diagramas do teclado e exercícios, passo a passo." loading="lazy" decoding="async"></div><figcaption><span class="material-label">Por dentro do material</span><h3>Exemplos para praticar</h3><p>Diagramas do teclado e exercícios, passo a passo.</p></figcaption></figure>
-        <figure class="material-card"><div class="material-image"><img src="imagens/bonus-1.webp" width="640" height="640" alt="Caderno de Acordes: Os acordes à mão para consultar durante a prática." loading="lazy" decoding="async"></div><figcaption><span class="material-label">Bónus 1</span><h3>Caderno de Acordes</h3><p>Os acordes à mão para consultar durante a prática.</p></figcaption></figure>
-        <figure class="material-card"><div class="material-image"><img src="imagens/bonus-2.webp" width="640" height="640" alt="Cartões para o Teclado: Cartões de notas para imprimir, recortar e usar nas teclas." loading="lazy" decoding="async"></div><figcaption><span class="material-label">Bónus 2</span><h3>Cartões para o Teclado</h3><p>Cartões de notas para imprimir, recortar e usar nas teclas.</p></figcaption></figure>
-        <figure class="material-card"><div class="material-image"><img src="imagens/bonus-3.webp" width="640" height="640" alt="Uma Música por Dia: Um guia em três passos para explorar novas músicas." loading="lazy" decoding="async"></div><figcaption><span class="material-label">Bónus 3</span><h3>Uma Música por Dia</h3><p>Um guia em três passos para explorar novas músicas.</p></figcaption></figure>
-      </div>
-      <button class="car-btn next" type="button" aria-label="Ver mais materiais">›</button>
-    </div>
-    <p class="smallprint">Recebe os materiais em PDF. Pode consultar no telemóvel ou computador e imprimir para praticar.</p>
-  </div>
-</section>
-
-<!-- 4 · BÓNUS E ANCORAGEM DE VALOR -->
+<!-- BÓNUS EM CARROSSEL E ANCORAGEM DE VALOR -->
 <section class="dark" id="bonus" data-order="4">
   <div class="wrap stack-lg">
     <div class="stack narrow center">
       <p class="eyebrow">Ao comprar hoje</p>
       <h2>Recebe três bónus sem pagar mais por isso</h2>
     </div>
-    <div class="bonus-row">
+    <p class="swipe-hint bonus-swipe-hint" style="align-self:center">Arraste para o lado para ver os materiais →</p>
+    <div class="carousel-wrap materials-wrap">
+      <button class="car-btn prev" type="button" aria-label="Ver bónus anteriores" aria-controls="car-bonus">‹</button>
+      <div class="carousel bonus-carousel" id="car-bonus" tabindex="0" role="region" aria-roledescription="carrossel" aria-label="Três bónus e exemplos do livro. Use as setas ou deslize para explorar.">
       <div class="bonus">
         <img class="mockup" src="imagens/bonus-1.webp" width="640" height="640" alt="Caderno de Acordes, com um telemóvel a mostrar a página do acorde de Dó maior" loading="lazy" decoding="async">
         <span class="free">Grátis</span>
@@ -410,7 +390,19 @@ footer a{color:#fff}
         <p class="lead" style="font-size:.97rem">Em 3 passos, este guia mostra como pegar numa música que nunca tocou e tocá-la do princípio ao fim no mesmo dia: descobrir os acordes, acertar o ritmo e juntar as duas mãos.</p>
         <p class="val"><span class="strike">14,90 €</span> hoje 0 €</p>
       </div>
+      <div class="bonus bonus-example">
+        <img class="mockup" src="imagens/livro-aberto.webp" width="1400" height="788" alt="Livro aberto com diagramas do teclado e exercícios para praticar, passo a passo" loading="lazy" decoding="async">
+        <span class="free">Livro principal</span>
+        <h3>Abra o livro e saiba o que praticar</h3>
+        <p class="pain">Não sabe por onde começar? <strong>Veja cada passo no teclado.</strong></p>
+        <p class="example-detail">Diagramas mostram as teclas a usar e a posição dos dedos. Os exercícios estão organizados por etapas, para experimentar logo no seu instrumento.</p>
+        <p class="example-detail">Um plano de 21 dias, com sessões de 15 minutos, ajuda-o a chegar ao teclado com uma tarefa definida — sem saltar de vídeo em vídeo à procura da próxima explicação.</p>
+        <p class="example-included">Incluído no pack · PDF para consultar ou imprimir</p>
+      </div>
+      </div>
+      <button class="car-btn next" type="button" aria-label="Ver mais bónus e exemplos" aria-controls="car-bonus">›</button>
     </div>
+    <p class="smallprint" style="color:#fff;text-align:center">Recebe os materiais em PDF. Pode consultar no telemóvel ou computador e imprimir para praticar.</p>
   </div>
 <div class="bonus-value">
   <div class="wrap stack-lg center">
@@ -630,56 +622,11 @@ footer a{color:#fff}
   </div>
 </footer>
 
-<script>
-// Prazo do dia em Lisboa: inclui automaticamente as mudanças de hora de verão/inverno.
-(function(){
-  var timer = document.getElementById('offer-day-timer');
-  if (!timer) return;
-  var formatter = new Intl.DateTimeFormat('en-GB', {
-    timeZone: 'Europe/Lisbon', year: 'numeric', month: '2-digit', day: '2-digit',
-    hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23'
-  });
-  function partsAt(timestamp){
-    var parts = {};
-    formatter.formatToParts(new Date(timestamp)).forEach(function(part){
-      if (part.type !== 'literal') parts[part.type] = Number(part.value);
-    });
-    return parts;
-  }
-  var today = partsAt(Date.now());
-  var midnightWall = Date.UTC(today.year, today.month - 1, today.day + 1);
-  var deadline = midnightWall;
-  // Converte a próxima meia-noite de Lisboa para um instante UTC, sem assumir um offset fixo.
-  for (var attempt = 0; attempt < 3; attempt++) {
-    var local = partsAt(deadline);
-    var represented = Date.UTC(local.year, local.month - 1, local.day, local.hour, local.minute, local.second);
-    deadline += midnightWall - represented;
-  }
-  var hours = timer.querySelector('[data-hours]');
-  var minutes = timer.querySelector('[data-minutes]');
-  var seconds = timer.querySelector('[data-seconds]');
-  var interval = null;
-  function tick(){
-    var remaining = Math.max(0, Math.ceil((deadline - Date.now()) / 1000));
-    hours.textContent = String(Math.floor(remaining / 3600)).padStart(2, '0');
-    minutes.textContent = String(Math.floor(remaining / 60) % 60).padStart(2, '0');
-    seconds.textContent = String(remaining % 60).padStart(2, '0');
-    if (remaining === 0) {
-      clearInterval(interval);
-      document.querySelector('.urgency .u1').textContent = 'O prazo da oferta de hoje terminou';
-      document.getElementById('offer-day-deadline').textContent = 'Prazo terminado · hora de Portugal continental';
-    }
-  }
-  tick();
-  timer.hidden = false;
-  if (Date.now() < deadline) interval = setInterval(tick, 1000);
-  document.addEventListener('visibilitychange', function(){ if (!document.hidden) tick(); });
-})();
-</script>
 
 <script>
 // Carrosséis: deslizar, arrastar, navegar por botões ou pelas setas do teclado.
 document.querySelectorAll('.carousel').forEach(function(car){
+  if (car.id === 'car-bonus') car.scrollLeft = 0;
   var down = false, startX = 0, startLeft = 0, moved = false;
   car.addEventListener('pointerdown', function(e){
     if (e.pointerType !== 'mouse') return;
@@ -699,12 +646,14 @@ document.querySelectorAll('.carousel').forEach(function(car){
   car.addEventListener('click', function(e){ if (moved) { e.preventDefault(); e.stopPropagation(); } }, true);
 
   function passo(){
-    var s = car.querySelector('.material-card, .slide');
+    var s = car.querySelector('.bonus, .material-card, .slide');
     var gap = parseFloat(getComputedStyle(car).columnGap) || 12;
     return s ? (s.getBoundingClientRect().width + gap) * (car.id === 'car-provas' ? 2 : 1) : 300;
   }
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-  function move(direction){ car.scrollBy({left: direction * passo(), behavior: reduced.matches ? 'auto' : 'smooth'}); }
+  function move(direction){
+    car.scrollBy({left: direction * passo(), behavior: reduced.matches ? 'auto' : 'smooth'});
+  }
   var wrap = car.parentNode;
   wrap.querySelector('.car-btn.next').addEventListener('click', function(){ move(1); });
   wrap.querySelector('.car-btn.prev').addEventListener('click', function(){ move(-1); });
@@ -713,6 +662,7 @@ document.querySelectorAll('.carousel').forEach(function(car){
   });
 });
 </script>
+
 
 <script>
 // Depoimentos: passam sozinhos da direita para a esquerda, em loop.
