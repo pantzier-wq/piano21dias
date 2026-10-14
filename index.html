@@ -177,6 +177,9 @@ section{padding-block:clamp(36px,5.5vw,64px)}
 .bonus-example .example-included{font-weight:700;font-size:.92rem;color:var(--blue-dark);margin-top:auto}
 .bonus-carousel .val{margin-top:auto}
 .bonus-swipe-hint{text-align:center;justify-content:center;max-width:100%;text-wrap:balance}
+.carousel-motion{align-self:center;background:transparent;border:1px solid rgba(255,255,255,.45);border-radius:100px;color:#fff;padding:8px 16px;font-family:inherit;font-size:.84rem;font-weight:600;cursor:pointer}
+.carousel.bonus-carousel{overflow-anchor:none}
+.carousel-motion:focus-visible{outline:3px solid #5cc8ff;outline-offset:3px}
 .bonus .val{font-size:.95rem;font-weight:700}
 
 /* tabela dos packs */
@@ -401,6 +404,7 @@ footer a{color:#fff}
       </div>
       <button class="car-btn next" type="button" aria-label="Ver mais bónus e exemplos" aria-controls="car-bonus">›</button>
     </div>
+    <button class="carousel-motion" type="button" aria-controls="car-bonus" aria-pressed="false">Pausar movimento</button>
     <p class="smallprint" style="color:#fff;text-align:center">Recebe os materiais em PDF. Pode consultar no telemóvel ou computador e imprimir para praticar.</p>
   </div>
 <div class="bonus-value">
@@ -649,7 +653,13 @@ document.querySelectorAll('.carousel').forEach(function(car){
     return s ? (s.getBoundingClientRect().width + gap) * (car.id === 'car-provas' ? 2 : 1) : 300;
   }
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-  function move(direction){ car.scrollBy({left: direction * passo(), behavior: reduced.matches ? 'auto' : 'smooth'}); }
+  function move(direction){
+    if (car.id === 'car-bonus') {
+      car.dispatchEvent(new CustomEvent('bonus-move', {detail:direction}));
+      return;
+    }
+    car.scrollBy({left: direction * passo(), behavior: reduced.matches ? 'auto' : 'smooth'});
+  }
   var wrap = car.parentNode;
   wrap.querySelector('.car-btn.next').addEventListener('click', function(){ move(1); });
   wrap.querySelector('.car-btn.prev').addEventListener('click', function(){ move(-1); });
@@ -660,54 +670,72 @@ document.querySelectorAll('.carousel').forEach(function(car){
 </script>
 
 <script>
-// Bónus: movimento lento e contínuo para a esquerda, sem impedir a navegação manual.
+// Bónus: ciclo com apenas os quatro cartões originais, sem duplicações.
 (function(){
   var car = document.getElementById('car-bonus');
   if (!car) return;
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-  var originals = Array.prototype.slice.call(car.children);
-  originals.forEach(function(card){
-    var clone = card.cloneNode(true);
-    clone.setAttribute('aria-hidden', 'true');
-    clone.setAttribute('inert', '');
-    clone.querySelectorAll('img').forEach(function(img){ img.alt = ''; });
-    car.appendChild(clone);
-  });
   var wrap = car.parentNode;
-  var visible = false, hover = false, touching = false, focused = false;
-  var resumeAt = performance.now() + 1500, last = null, position = car.scrollLeft;
-  var speed = 18; // píxeis por segundo: os cartões saem lentamente pela esquerda.
-  function pause(){ resumeAt = performance.now() + 4500; position = car.scrollLeft; }
-  function cycleWidth(){
-    return car.children[originals.length].getBoundingClientRect().left - car.children[0].getBoundingClientRect().left;
+  var toggle = document.querySelector('.carousel-motion');
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var visible = false, touching = false, userPaused = false;
+  var resumeAt = performance.now() + 700, last = null, position = car.scrollLeft;
+  function step(){
+    return car.firstElementChild.getBoundingClientRect().width + (parseFloat(getComputedStyle(car).columnGap) || 18);
   }
-  wrap.addEventListener('pointerenter', function(e){ if (e.pointerType === 'mouse') hover = true; });
-  wrap.addEventListener('pointerleave', function(e){ if (e.pointerType === 'mouse') { hover = false; pause(); } });
+  function pause(delay){
+    resumeAt = performance.now() + (typeof delay === 'number' ? delay : 2200);
+    position = car.scrollLeft;
+  }
+  // O cartão que já saiu completamente pela esquerda vai para o fim da mesma fila.
+  // Compensar a posição mantém os restantes no mesmo lugar, sem saltos nem clones.
+  function recycle(){
+    var distance = step();
+    while (distance > 0 && position >= distance + 4) {
+      car.appendChild(car.firstElementChild);
+      position -= distance;
+      car.scrollLeft = position;
+    }
+  }
+  car.addEventListener('bonus-move', function(e){
+    pause();
+    recycle();
+    var distance = step();
+    if (e.detail < 0 && position <= 4) {
+      car.insertBefore(car.lastElementChild, car.firstElementChild);
+      position += distance;
+      car.scrollLeft = position;
+    }
+    var target = Math.max(0, Math.min(car.scrollWidth - car.clientWidth, position + e.detail * distance));
+    car.scrollTo({left:target, behavior:reduced.matches ? 'auto' : 'smooth'});
+  });
   wrap.addEventListener('pointerdown', function(){ touching = true; pause(); });
   window.addEventListener('pointerup', function(){ if (touching) { touching = false; pause(); } });
   window.addEventListener('pointercancel', function(){ if (touching) { touching = false; pause(); } });
-  wrap.addEventListener('wheel', pause, {passive:true});
-  wrap.addEventListener('click', pause);
-  wrap.addEventListener('keydown', pause);
-  car.addEventListener('focusin', function(){ focused = true; });
-  car.addEventListener('focusout', function(){ focused = false; pause(); });
+  wrap.addEventListener('wheel', function(){ pause(); }, {passive:true});
+  wrap.addEventListener('click', function(){ pause(); });
+  wrap.addEventListener('keydown', function(){ pause(); });
+  toggle.addEventListener('click', function(){
+    userPaused = !userPaused;
+    toggle.textContent = userPaused ? 'Retomar movimento' : 'Pausar movimento';
+    toggle.setAttribute('aria-pressed', String(userPaused));
+    pause(0);
+  });
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(function(entries){
       visible = entries[0].isIntersecting;
       last = null;
-      if (visible) pause();
-    }).observe(car);
+      if (visible) pause(700);
+    }, {threshold:0.05}).observe(car);
   } else visible = true;
-  document.addEventListener('visibilitychange', function(){ last = null; pause(); });
+  document.addEventListener('visibilitychange', function(){ last = null; pause(700); });
   function frame(now){
     var dt = last === null ? 0 : Math.min((now - last) / 1000, .1);
     last = now;
-    if (visible && !document.hidden && !reduced.matches && !hover && !touching && !focused && now >= resumeAt) {
-      // Recolhe a posição final depois de um swipe ou de um botão com scroll suave.
+    if (visible && !document.hidden && !touching && !userPaused && now >= resumeAt) {
       if (Math.abs(car.scrollLeft - position) > 2) position = car.scrollLeft;
-      position += speed * dt;
-      var cycle = cycleWidth();
-      if (cycle > 0 && position >= cycle) position %= cycle;
+      recycle();
+      // Movimento ainda mais lento com movimento reduzido; a pausa fica sempre disponível.
+      position += (reduced.matches ? 8 : 18) * dt;
       car.scrollLeft = position;
     } else position = car.scrollLeft;
     requestAnimationFrame(frame);
