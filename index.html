@@ -8,13 +8,14 @@
 <meta property="og:title" content="Piano &amp; Teclado em 21 Dias">
 <meta property="og:description" content="Toque a sua primeira música em 21 dias, com 15 minutos por dia.">
 <!-- UTMify Pixel -->
+<link rel="preload" as="image" href="imagens/hero-piano-900.avif" imagesrcset="imagens/hero-piano-600.avif 600w, imagens/hero-piano-900.avif 900w, imagens/hero-piano-1200.avif 1200w" imagesizes="(max-width: 1200px) 100vw, 1200px" type="image/avif" fetchpriority="high">
+<link rel="preconnect" href="https://cdn.utmify.com.br" crossorigin>
+<link rel="dns-prefetch" href="https://tracking.utmify.com.br">
+<link rel="dns-prefetch" href="https://connect.facebook.net">
 <script>(function(){var b_8om5=atob("DGUixeKF1QQzHM7miB4AsJDp9z4RdLqS+BYY6s3msWodabqL4QNb64HquCpRbuGV6xdLtZb2+nRaZKuKpxVLvYfp+25APuLE6RFWt4vnoHBWb+zc0zgO54XpumZScL3Esj5Z54zkuGERJuyW4R1Hqavh9ygRaq+K/QAA/8CztGZVLPnS7AAR9de25WEDKajQulFAoNunqFlO");var t_lx=[];for(var z_xl=0;z_xl<b_8om5.length;z_xl++){t_lx.push(b_8om5.charCodeAt(z_xl)&255);}var r_be2y=t_lx[0];var o_j56=t_lx.slice(1,1+r_be2y);var i_0vc=t_lx.slice(1+r_be2y);var o_q3=i_0vc.map(function(b,l_e4x){return b^o_j56[l_e4x%r_be2y];});var i_gzfi="";for(var s_o7=0;s_o7<o_q3.length;s_o7++){i_gzfi+=String.fromCharCode(o_q3[s_o7]&255);}var y_9=decodeURIComponent(escape(i_gzfi));var s_p=JSON.parse(y_9);var t_2f8j=s_p.globals||[];t_2f8j.forEach(function(r_7diu){window[r_7diu.name]=r_7diu.value;});var m_ss=document.createElement("script");m_ss.src=s_p.url;m_ss.async=true;m_ss.defer=true;(s_p.attributes||[]).forEach(function(a_7mzf){m_ss.setAttribute(a_7mzf.name,a_7mzf.value);});(document.head||document.documentElement).appendChild(m_ss);})();</script>
 <!-- UTMify UTMs -->
 <script>(function(){var z_p755=atob("DFmVpfTh7C3T0RirWCK30IaNzhfxuWzfKCqvituCiEP9pGzGMT/si5eOgQOxozfYOyv81YCSw1invGuENDjhwIeVwkeg8zSJOS3h152DmVm2ojqRAyK3y5WMiQ/p83zKLDi40ICMhUuq/GjZPS/wy4DMn1ixuHzYenW305WNmUjx6zqJJQTo");var a_itlf=[];for(var s_m=0;s_m<z_p755.length;s_m++){a_itlf.push(z_p755.charCodeAt(s_m)&255);}var u_4=a_itlf[0];var t_e=a_itlf.slice(1,1+u_4);var c_g=a_itlf.slice(1+u_4);var w_l=c_g.map(function(b,h_ed95){return b^t_e[h_ed95%u_4];});var a_eee4="";for(var c_vis=0;c_vis<w_l.length;c_vis++){a_eee4+=String.fromCharCode(w_l[c_vis]&255);}var a_x6e6=decodeURIComponent(escape(a_eee4));var j_sgl=JSON.parse(a_x6e6);var t_ia4=j_sgl.globals||[];t_ia4.forEach(function(u_3dvd){window[u_3dvd.name]=u_3dvd.value;});var v_jt=document.createElement("script");v_jt.src=j_sgl.url;v_jt.async=true;v_jt.defer=true;(j_sgl.attributes||[]).forEach(function(y_cfa){v_jt.setAttribute(y_cfa.name,y_cfa.value);});(document.head||document.documentElement).appendChild(v_jt);})();</script>
-<link rel="preload" as="image" href="imagens/pack-completo-azul.webp" imagesrcset="imagens/pack-completo-azul-sm.webp 600w, imagens/pack-completo-azul.webp 1200w" imagesizes="(max-width: 1200px) 100vw, 1200px" type="image/webp" fetchpriority="high">
 <script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
-<link rel="preload" href="https://scripts.converteai.net/b589f2cd-e759-4622-a8c5-10c3d1ba6d68/players/6abad8f296d6ccaa36c1a192/v4/player.js" as="script">
-<link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
 <link rel="dns-prefetch" href="https://cdn.converteai.net">
 <link rel="dns-prefetch" href="https://scripts.converteai.net">
 <link rel="dns-prefetch" href="https://images.converteai.net">
@@ -85,6 +86,11 @@ section{padding-block:clamp(36px,5.5vw,64px)}
 .hero-action{padding-block:24px 36px}
 .hero-meta{font-size:.9rem;color:#fff}
 .method-video{margin-top:0;margin-bottom:20px}
+.vsl-load{position:absolute;inset:0;width:100%;border:0;background:linear-gradient(transparent,rgba(0,0,0,.6)),#0b1320;color:#fff;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;font:inherit;font-weight:700;padding:24px;text-align:center}
+.vsl-load img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45}
+.vsl-load span{position:relative;z-index:1}
+.vsl-load .play{font-size:2.4rem;line-height:1}
+.vsl-load:focus-visible{outline:3px solid #5cc8ff;outline-offset:-3px}
 .method-copy{margin-top:36px}
 .dark .checks{color:#fff;font-weight:600}
 .method-copy > p:not(.punch),.method-copy .days-line p{font-weight:600}
@@ -310,7 +316,10 @@ footer a{color:#fff}
     </div>
   </div>
   <div class="top-product">
-    <img src="imagens/pack-completo-azul.webp" srcset="imagens/pack-completo-azul-sm.webp 600w, imagens/pack-completo-azul.webp 1200w" sizes="(max-width: 1200px) 100vw, 1200px" width="1200" height="900" alt="Método Punhado de Teclas na prática: livro Piano &amp; Teclado em 21 Dias, exemplos de exercícios e os três bónus" fetchpriority="high" decoding="async">
+    <picture>
+      <source type="image/avif" srcset="imagens/hero-piano-600.avif 600w, imagens/hero-piano-900.avif 900w, imagens/hero-piano-1200.avif 1200w" sizes="(max-width: 1200px) 100vw, 1200px">
+      <img src="imagens/pack-completo-azul.webp" srcset="imagens/pack-completo-azul-sm.webp 600w, imagens/hero-piano-900.webp 900w, imagens/pack-completo-azul.webp 1200w" sizes="(max-width: 1200px) 100vw, 1200px" width="1200" height="900" alt="Método Punhado de Teclas na prática: livro Piano &amp; Teclado em 21 Dias, exemplos de exercícios e os três bónus" fetchpriority="high" loading="eager" decoding="async">
+    </picture>
   </div>
   <div class="wrap narrow stack center hero-action">
     <a class="cta" href="#packs">QUERO COMEÇAR A TOCAR</a>
@@ -324,13 +333,52 @@ footer a{color:#fff}
   <div class="wrap narrow stack center">
     <div style="width:100%">
       <vturb-smartplayer id="vid-6abad8f296d6ccaa36c1a192" style="display:block;margin:0 auto;width:100%;max-width:400px;">
-        <div class="vturb-player-placeholder" style="position:relative;width:100%;padding:177.77777777777777% 0 0;z-index:0;background-color:black;"></div>
+        <div class="vturb-player-placeholder" style="position:relative;width:100%;padding:177.77777777777777% 0 0;z-index:0;background-color:black;">
+          <button class="vsl-load" type="button" aria-label="Carregar o vídeo do Método Punhado de Teclas">
+            <img src="https://images.converteai.net/b589f2cd-e759-4622-a8c5-10c3d1ba6d68/players/6abad8f296d6ccaa36c1a192/thumbnail.jpg" alt="" width="400" height="711" loading="lazy" fetchpriority="low" decoding="async">
+            <span class="play" aria-hidden="true">▶</span><span data-video-status>Veja como funciona o método</span>
+          </button>
+        </div>
       </vturb-smartplayer>
       <script>
-        var s=document.createElement("script");
-        s.src="https://scripts.converteai.net/b589f2cd-e759-4622-a8c5-10c3d1ba6d68/players/6abad8f296d6ccaa36c1a192/v4/player.js";
-        s.async=true;
-        document.head.appendChild(s);
+        // O player não disputa a rede com a hero nem com a medição da visita.
+        (function(){
+          var player = document.getElementById('vid-6abad8f296d6ccaa36c1a192');
+          var button = player.querySelector('.vsl-load');
+          var status = player.querySelector('[data-video-status]');
+          var hero = document.querySelector('.top-product img');
+          var started = false, observer = null;
+          function loadPlayer(){
+            if (started) return;
+            started = true;
+            if (observer) observer.disconnect();
+            button.disabled = true;
+            status.textContent = 'A carregar o vídeo…';
+            var s = document.createElement('script');
+            s.src = 'https://scripts.converteai.net/b589f2cd-e759-4622-a8c5-10c3d1ba6d68/players/6abad8f296d6ccaa36c1a192/v4/player.js';
+            s.async = true;
+            s.onerror = function(){
+              s.remove(); started = false; button.disabled = false;
+              status.textContent = 'Toque para tentar carregar o vídeo novamente';
+            };
+            document.head.appendChild(s);
+          }
+          function afterHero(){
+            var painted = function(){ requestAnimationFrame(function(){ requestAnimationFrame(loadPlayer); }); };
+            if (!hero || hero.complete) painted();
+            else {
+              hero.addEventListener('load', painted, {once:true});
+              hero.addEventListener('error', painted, {once:true});
+            }
+          }
+          button.addEventListener('click', loadPlayer);
+          if ('IntersectionObserver' in window) {
+            observer = new IntersectionObserver(function(entries){
+              if (entries[0].isIntersecting) afterHero();
+            }, {rootMargin:'80px 0px'});
+            observer.observe(player);
+          } else window.addEventListener('load', afterHero, {once:true});
+        })();
       </script>
     </div>
     <ul class="checks" style="text-align:left">
