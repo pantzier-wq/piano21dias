@@ -21,7 +21,7 @@
    course=JSON.parse(new TextDecoder().decode(await decrypt('course.bin')));
    try{sessionStorage.setItem(SESSION,access);}catch{}
    if(location.hash)history.replaceState(null,'',location.pathname+location.search);
-   $('access-screen').hidden=true;$('app').hidden=false;render();
+   $('access-screen').hidden=true;$('app').hidden=false;render();document.body.dataset.mainReady='true';document.dispatchEvent(new Event('piano-main-unlocked'));
   }catch(e){
    $('access-message').textContent=e.message==='unsupported'?'Questo browser non supporta l’apertura protetta dei materiali. Prova con una versione recente di Safari, Chrome, Firefox o Edge.':e.message==='network'?'Non riesco a scaricare i materiali. Controlla la connessione e riprova.':'Il link non è completo o non è quello corretto. Riapri la biblioteca dal pulsante nel PDF di benvenuto.';
    $('retry').hidden=false;
@@ -78,4 +78,3 @@
  window.addEventListener('hashchange',()=>{if(location.hash.includes('accesso='))unlock();});
  unlock();
 })();
-

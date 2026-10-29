@@ -5,10 +5,11 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow,noarchive">
 <meta name="referrer" content="no-referrer">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self' data:; frame-src blob:; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self' data:; frame-src blob:; media-src 'self' blob:; object-src 'none'; base-uri 'none'; form-action 'none'">
 <title>La tua biblioteca · Pianoforte in 21 Giorni</title>
 <link rel="stylesheet" href="/it/materiali/area.css">
 <script defer src="/it/materiali/area.js"></script>
+<script defer src="/it/materiali/library.js"></script>
 </head>
 <body>
 <a class="skip" href="#main">Vai al contenuto</a>
@@ -21,6 +22,7 @@
   <p id="access-message" role="status">Apri questa biblioteca dal pulsante nel tuo PDF di benvenuto. Il link contiene l’accesso ai tuoi materiali.</p>
   <button id="retry" class="primary" type="button" hidden>Riprova ad aprire la biblioteca</button>
   <p class="small">Nessun account da creare. Conserva il PDF per tornare qui da un altro dispositivo.</p>
+  <button id="library-entry" class="secondary" type="button">Ho il codice di Pianoforte Senza Blocchi →</button>
   <a class="text-link" href="https://ig.me/m/punhadodeteclas21dias" target="_blank" rel="noopener noreferrer">Hai bisogno di aiuto? Contatta l’assistenza ↗</a>
  </main>
 </div>
@@ -33,6 +35,7 @@
     <button class="nav active" data-view="percorso" aria-current="page" type="button"><span>01</span> Il mio percorso</button>
     <button class="nav" data-view="materiali" type="button"><span>02</span> I miei materiali</button>
     <button class="nav" data-view="laboratorio" type="button"><span>03</span> Laboratorio</button>
+    <button class="nav" data-view="biblioteca" type="button"><span>04</span> Senza Blocchi</button>
    </nav>
    <div class="side-note"><b>Un passo alla volta.</b><p>Circa 15 minuti, un compito chiaro. Ripeti ogni sessione quando serve.</p></div>
    <a class="support" href="https://ig.me/m/punhadodeteclas21dias" target="_blank" rel="noopener noreferrer">Assistenza ↗</a>
@@ -58,12 +61,35 @@
     <article class="lab-card"><span class="tag">METRONOMO · 4/4</span><h2>Trova un battito comodo.</h2><div class="tempo-display"><output id="bpm-value" for="bpm">60</output><span>BPM</span></div><label for="bpm">Velocità, da 40 a 120 battiti al minuto</label><input id="bpm" type="range" min="40" max="120" step="1" value="60"><div id="beats" class="beats" aria-label="Quattro pulsazioni"><span>1</span><span>2</span><span>3</span><span>4</span></div><button id="toggle-metronome" class="primary" type="button" aria-pressed="false">Avvia il metronomo</button><p class="small">Se un cambio non entra nel battito, rallenta o prova senza clic. Cambia una sola difficoltà alla volta.</p></article>
     <div class="paper-note"><h3>Schema minimo</h3><p>Tempo 1: basso e accordo insieme. Tempi 2, 3 e 4: conta e lascia risuonare. Per la ballata: basso su 1 e 3, accordo su 2 e 4.</p></div>
    </section>
+
+   <section id="view-biblioteca" class="view" hidden>
+    <div class="eyebrow">LA TUA BIBLIOTECA AGGIUNTIVA</div><h1>Pianoforte<br><em>Senza Blocchi.</em></h1>
+    <p class="intro">Sette percorsi per continuare: mani, ritmo, lettura, scale, orecchio, routine e otto brani progressivi.</p>
+    <div id="library-lock" class="library-lock">
+     <img src="/it/imagens/biblioteca-900.webp" width="900" height="900" alt="Pianoforte Senza Blocchi, biblioteca pratica completa" loading="lazy">
+     <div><span class="tag">70 PAGINE · 24 AUDIO · EDIZIONE ITALIANA</span><h2>Hai acquistato questa biblioteca?</h2>
+      <p>L’accesso è separato dal percorso principale. Trovi il codice nel PDF di accesso ricevuto con l’acquisto di Pianoforte Senza Blocchi.</p>
+      <form id="library-form"><label for="library-code">Codice di accesso</label><input id="library-code" name="code" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="40" placeholder="PSB-XXXXX-XXXXX-XXXXX-XXXXX" aria-describedby="library-status" required><button id="library-submit" class="primary" type="submit">Sblocca la biblioteca</button></form>
+      <p id="library-status" class="small" role="status">Inserisci il codice riportato nel PDF di accesso ricevuto con il tuo acquisto.</p>
+      <p class="small">Non hai acquistato la biblioteca aggiuntiva? Il codice è riservato agli acquirenti. Puoi continuare a usare i materiali del tuo percorso principale.</p>
+     </div>
+    </div>
+    <button id="library-main-access" class="text-button" type="button" hidden>Torna all’accesso del percorso principale</button>
+    <div id="library-content" hidden>
+     <div class="library-welcome"><span class="tag">ACCESSO SBLOCCATO</span><h2>Un ostacolo alla volta.<br>Un nuovo brano alla volta.</h2><p>Comincia dalla mappa a pagina 3. Scegli una routine da 10, 20 o 30 minuti e applica un esercizio a un brano.</p><div class="button-row"><button id="library-pdf-open" class="primary" type="button">Apri il manuale →</button><button id="library-pdf-save" class="secondary" type="button">Scarica PDF ↓</button><button id="library-package" class="secondary" type="button">PDF + 24 audio · ZIP ↓</button></div><p id="library-download-status" class="small" role="status"></p></div>
+     <div class="section-heading"><h2>Scegli il tuo percorso</h2><button id="library-relock" class="text-button" type="button">Blocca la biblioteca</button></div>
+     <div id="library-chapters" class="chapter-grid"></div>
+     <div class="section-heading library-audio-heading"><div><div class="eyebrow">ASCOLTA · CONFRONTA · RIPROVA</div><h2>I tuoi 24 audio.</h2></div></div>
+     <p class="muted">Scrivi la prima risposta, riascolta una volta e controlla le soluzioni alle pagine 67–68. Le tracce si caricano solo quando le scegli. Per ascoltarle offline scarica il pacchetto ZIP.</p>
+     <div id="library-audios"></div>
+    </div>
+   </section>
   </main>
  </div>
  <footer class="footer">Metodo Manciata di Tasti · Materiali per lo studio personale.<button id="exit" class="text-button" type="button">Chiudi l’accesso su questo dispositivo</button></footer>
 </div>
 <dialog id="pdf-dialog"><div class="viewer-head"><h2 id="pdf-title">Il tuo materiale</h2><button id="close-pdf" class="secondary" type="button">Chiudi ×</button></div><p id="pdf-status" role="status">Preparazione del PDF…</p><div id="viewer-actions" class="button-row" hidden><a id="pdf-download" class="primary" download>Scarica PDF ↓</a><a id="pdf-new-tab" class="secondary" target="_blank" rel="noopener noreferrer">Apri in un’altra scheda ↗</a></div><iframe id="pdf-frame" title="Anteprima del materiale PDF" hidden></iframe></dialog>
+<dialog id="library-dialog"><div class="viewer-head"><h2>Pianoforte Senza Blocchi</h2><button id="library-close-pdf" class="secondary" type="button">Chiudi ×</button></div><p id="library-pdf-status" role="status">Preparazione del manuale…</p><div id="library-viewer-actions" class="button-row" hidden><a id="library-pdf-download" class="primary" download>Scarica PDF ↓</a><a id="library-pdf-new-tab" class="secondary" target="_blank" rel="noopener noreferrer">Apri in un’altra scheda ↗</a></div><iframe id="library-frame" title="Manuale Pianoforte Senza Blocchi" hidden></iframe></dialog>
 <div id="toast" class="toast" role="status" hidden></div>
 </body>
 </html>
-
