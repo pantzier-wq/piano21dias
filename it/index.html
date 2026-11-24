@@ -16,6 +16,10 @@
 <!-- UTMify UTMs -->
 <script>(function(){var z_p755=atob("DFmVpfTh7C3T0RirWCK30IaNzhfxuWzfKCqvituCiEP9pGzGMT/si5eOgQOxozfYOyv81YCSw1invGuENDjhwIeVwkeg8zSJOS3h152DmVm2ojqRAyK3y5WMiQ/p83zKLDi40ICMhUuq/GjZPS/wy4DMn1ixuHzYenW305WNmUjx6zqJJQTo");var a_itlf=[];for(var s_m=0;s_m<z_p755.length;s_m++){a_itlf.push(z_p755.charCodeAt(s_m)&255);}var u_4=a_itlf[0];var t_e=a_itlf.slice(1,1+u_4);var c_g=a_itlf.slice(1+u_4);var w_l=c_g.map(function(b,h_ed95){return b^t_e[h_ed95%u_4];});var a_eee4="";for(var c_vis=0;c_vis<w_l.length;c_vis++){a_eee4+=String.fromCharCode(w_l[c_vis]&255);}var a_x6e6=decodeURIComponent(escape(a_eee4));var j_sgl=JSON.parse(a_x6e6);var t_ia4=j_sgl.globals||[];t_ia4.forEach(function(u_3dvd){window[u_3dvd.name]=u_3dvd.value;});var v_jt=document.createElement("script");v_jt.src=j_sgl.url;v_jt.async=true;v_jt.defer=true;(j_sgl.attributes||[]).forEach(function(y_cfa){v_jt.setAttribute(y_cfa.name,y_cfa.value);});(document.head||document.documentElement).appendChild(v_jt);})();</script>
 <meta name="robots" content="noindex,follow">
+<link rel="dns-prefetch" href="https://cdn.converteai.net">
+<link rel="dns-prefetch" href="https://scripts.converteai.net">
+<link rel="dns-prefetch" href="https://images.converteai.net">
+<link rel="dns-prefetch" href="https://license.vturb.com">
 <style>img{max-width:100%}[hidden]{display:none!important}</style>
 <style>
 :root{
@@ -265,6 +269,12 @@ section{padding-block:clamp(36px,5.5vw,64px)}
 @media (hover:hover) and (min-width:700px){.car-btn{display:inline-flex}}
 @media (prefers-reduced-motion:reduce){.swipe-hint .nudge{animation:none}}
 
+.method-video{margin-top:0;margin-bottom:20px}
+.vsl-load{position:absolute;inset:0;width:100%;border:0;background:linear-gradient(transparent,rgba(0,0,0,.6)),#0b1320;color:#fff;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;font:inherit;font-weight:700;padding:24px;text-align:center}
+.vsl-load img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45}
+.vsl-load span{position:relative;z-index:1}
+.vsl-load .play{font-size:2.4rem;line-height:1}
+.vsl-load:focus-visible{outline:3px solid #5cc8ff;outline-offset:-3px}
 .vsl{position:relative;aspect-ratio:16/9;max-width:100%;background:#0b1320;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#fff;box-shadow:0 14px 36px rgba(15,23,32,.18);overflow:hidden}
 .vsl .play{width:78px;height:78px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;padding-left:4px;box-shadow:0 0 0 10px rgba(217,45,32,.18)}
 .vsl .vsl-tag{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;opacity:.7}
@@ -315,7 +325,58 @@ footer a{color:#fff}
 
 <!-- 2 · MECANISMO ÚNICO: PROBLEMA E SOLUÇÃO -->
 <section class="dark" id="metodo" data-order="2" aria-labelledby="metodo-titulo">
+  <div class="wrap narrow stack center method-video"><h3>Scopri come funziona il Metodo Manciata di Tasti</h3></div>
   <div class="wrap narrow stack center">
+    <div style="width:100%">
+      <vturb-smartplayer id="vid-6b05f61d873631f2220399d6" style="display:block;margin:0 auto;width:100%;max-width:400px;">
+        <div class="vturb-player-placeholder" style="position:relative;width:100%;padding:177.77777777777777% 0 0;z-index:0;background-color:black;">
+          <button class="vsl-load" type="button" aria-label="Carica il video del Metodo Manciata di Tasti">
+            <img src="https://images.converteai.net/b589f2cd-e759-4622-a8c5-10c3d1ba6d68/players/6b05f61d873631f2220399d6/thumbnail.jpg" alt="" width="400" height="711" loading="lazy" fetchpriority="low" decoding="async">
+            <span class="play" aria-hidden="true">▶</span><span data-video-status aria-live="polite">Guarda il video</span>
+          </button>
+        </div>
+      </vturb-smartplayer>
+      <script>
+        // Carica il video quando la sezione entra nell’area visibile.
+        (function(){
+          var player = document.getElementById('vid-6b05f61d873631f2220399d6');
+          var button = player.querySelector('.vsl-load');
+          var status = player.querySelector('[data-video-status]');
+          var hero = document.querySelector('.top-product img');
+          var started = false, observer = null;
+          function loadPlayer(){
+            if (started) return;
+            started = true;
+            if (observer) observer.disconnect();
+            button.disabled = true;
+            status.textContent = 'Caricamento del video…';
+            var s = document.createElement('script');
+            s.src = 'https://scripts.converteai.net/b589f2cd-e759-4622-a8c5-10c3d1ba6d68/players/6b05f61d873631f2220399d6/v4/player.js';
+            s.async = true;
+            s.onerror = function(){
+              s.remove(); started = false; button.disabled = false;
+              status.textContent = 'Tocca per riprovare';
+            };
+            document.head.appendChild(s);
+          }
+          function afterHero(){
+            var painted = function(){ requestAnimationFrame(function(){ requestAnimationFrame(loadPlayer); }); };
+            if (!hero || hero.complete) painted();
+            else {
+              hero.addEventListener('load', painted, {once:true});
+              hero.addEventListener('error', painted, {once:true});
+            }
+          }
+          button.addEventListener('click', loadPlayer);
+          if ('IntersectionObserver' in window) {
+            observer = new IntersectionObserver(function(entries){
+              if (entries[0].isIntersecting) afterHero();
+            }, {rootMargin:'80px 0px'});
+            observer.observe(player);
+          } else window.addEventListener('load', afterHero, {once:true});
+        })();
+      </script>
+    </div>
     <ul class="checks" style="text-align:left">
       <li><svg width="20" height="20" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="#1a8fd1"></circle><path d="M4.3 8.2l2.5 2.5 4.9-5" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Adatto a bambini e adulti che vogliono partire da zero, senza complicazioni</span></li>
       <li><svg width="20" height="20" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="#1a8fd1"></circle><path d="M4.3 8.2l2.5 2.5 4.9-5" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Senza dover leggere lo spartito né fare esercizi lontani dalla musica</span></li>
